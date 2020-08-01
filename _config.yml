@@ -7,7 +7,7 @@ email:                    minhtien@phys.ksu.edu
 description: >
   A personal website about technical things I find useful. Also, random ramblings and rants.
 baseurl:                  ""
-url:                      "https://www.tienmphan.github.io"
+url:                      "https://tienmphan.github.io"
 twitter_username:         PhanBiophys
 github_username:          TienMPhan
 disqus_baseurl:           "https://TienMPhan.github.io/"
