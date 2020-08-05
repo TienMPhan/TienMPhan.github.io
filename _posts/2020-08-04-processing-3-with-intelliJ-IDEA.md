@@ -1,6 +1,9 @@
 ---
 layout: post
-tittle: Processing 3 with IntelliJ IDEA
+title: Processing 3 with IntelliJ IDEA
+description: A simple guide to get Processing 3 worked with IntelliJ IDEA.
+comments: false
+keywords: processing, idea, java
 ---
 
 ## How to use Processing 3 on IntelliJ IDEA?
@@ -20,3 +23,21 @@ __Step 3__: Call `PApplet.main("YourSketchNameHere");` to launch your sketch.
 Here is a little example that shows those steps:
 
 ![](../assets/setup_IntelliJ_IDEA_processing.png)
+
+When creating a `class` in separate file, to get the syntax recognized the `setup()` function 
+
+```java
+	public void setup() {
+		processing = this;
+	}
+```
+
+does the trick. In the new file, just add
+
+```java
+	MainClass.processing.line(x1, y1, x2, y2);
+```
+
+Thanks, Processing Foundation.
+
+Happy Coding!
