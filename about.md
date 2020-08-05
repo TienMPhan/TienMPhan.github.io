@@ -10,7 +10,7 @@ permalink: /about/
 
 Hey there! I am Tien Phan, a PhD student in Jeremy Schmit's [Lab](https://www.phys.ksu.edu/personal/schmit/).
 
-I am interested in building multi-scale modeling in molecular self-assembly. Basically, I love to use simulation to explore the mechanisms of biological system.
+I am interested in building multi-scale modeling in molecular self-assembly. Basically, I love to use simulation to explore the biological system.
 I also a big fan of Nature of Code by Danial Shiffman.
 
 
