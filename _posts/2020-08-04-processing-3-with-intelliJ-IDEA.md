@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Processing 3 with IntelliJ IDEA
-description: A simple guide to get Processing 3 worked with IntelliJ IDEA.
+description: A simple guide to get Processing 3 to work with IntelliJ IDEA.
 comments: false
 keywords: processing, idea, java
 ---
@@ -10,7 +10,7 @@ keywords: processing, idea, java
 
 Honestly, Processing IDE is fine to work with but the missing of auto-completion is a bit annoying and considered not productive.
 
-There's no doubt that IntelliJ IDEA has the most productive coding assitance, which helps us stay focused on ideas rather than dealing with typos, errors or syntax... So, getting Processing 3 worked with IntelliJ IDEA is worth to try.
+There's no doubt that IntelliJ IDEA has the most productive coding assitance, which helps us stay focused on ideas rather than dealing with typos, errors or syntax... So, getting Processing 3 to work with IntelliJ IDEA is worth to try.
 
 There are a lot of workarounds, below is based on an [answer](https://stackoverflow.com/questions/36765288/how-to-use-processing-3-on-intellij-idea) from __stackoverflow__:
 
