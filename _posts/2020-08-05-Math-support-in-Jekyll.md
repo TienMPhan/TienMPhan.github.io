@@ -6,7 +6,7 @@ comments: false
 keywords: mathjax, tex, Jekyll, markdown
 ---
 
-Simple tweak to get Jekyll working with math equations using MathJax.
+Simple tweak to get Jekyll to work with math equations using MathJax.
 
 ### Enabling [MathJax](https://www.mathjax.org/)
 
