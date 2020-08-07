@@ -2,7 +2,7 @@
 layout: post
 title: Use MathJax to write equations in Jekyll
 description: Getting equations with MathJax.
-comments: false
+comments: true
 keywords: mathjax, tex, Jekyll, markdown
 ---
 

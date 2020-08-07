@@ -2,7 +2,7 @@
 layout: post
 title: Processing 3 with IntelliJ IDEA
 description: A simple guide to get Processing 3 to work with IntelliJ IDEA.
-comments: false
+comments: true
 keywords: processing, idea, java
 ---
 
