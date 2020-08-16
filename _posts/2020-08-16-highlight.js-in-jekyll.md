@@ -39,13 +39,7 @@ highlightjs_theme: "atom-one-dark"
 
 ### Usage
 
-- Put your code block between
-  
-  ```
-  {% highlight your-language %}
-  ...
-  {% endhighlight %}
-  ```
+- Inside of a post, you can enable syntax highlighting with the Liquid tag.
 
 - Demo in javascript
 
@@ -64,7 +58,7 @@ and `C++`
 #include <iostream>
 
 int main() {
-std::cout << "Hello World!" << std::endl;
+  std::cout << "Hello World!" << std::endl;
 }
 
 {% endhighlight %}
