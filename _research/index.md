@@ -1,9 +1,11 @@
 ---
 layout: page
-title: Projects
-permalink: /talks/
+title: Research
+permalink: /research/
+
+
 ---
-<br>
+<!-- <br>
 <div align="center"> Projects </div>
 
 <div>
@@ -80,4 +82,4 @@ permalink: /talks/
       {% endif %}
     </div>
 {% endfor %}
-</div>
+</div> -->
