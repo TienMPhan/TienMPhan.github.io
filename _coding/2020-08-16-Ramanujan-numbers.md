@@ -13,9 +13,9 @@ his taxi was 1729, a rather dull number. To which Ramanujan replied, <em>No, Har
 is a very interesting number; it is the smallest number expressible as the sum of two cubes in two
 different ways</em>.
 
-<!-- <iframe width="640" height="480" src="https://www.youtube.com/embed/Qi4SDDjgHdU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qi4SDDjgHdU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-{% youtube Qi4SDDjgHdU %}
+<!-- {% youtube Qi4SDDjgHdU %} -->
 
 An integer <em>n</em> is a <em>Ramanujan number</em> if can be expressed as the sum of two positive cubes in two
 different ways. That is, there are four distinct positive integers <em>a, b, c</em>, and d such that $n = a^3 + b^3 = c^3 + d^3$.
