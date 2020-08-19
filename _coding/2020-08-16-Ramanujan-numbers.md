@@ -35,7 +35,7 @@ public class Ramanujan {
 
 Here are a few sample executions:
 
-```bash
+{% highlight bash %}
 ~/Desktop/performance> java-introcs Ramanujan 1729
 true
 ~/Desktop/performance> java-introcs Ramanujan 3458
@@ -46,7 +46,7 @@ true
 true
 ~/Desktop/performance> java-introcs Ramanujan 9223278330318728221
 true
-```
+{% endhighlight %}
 
 <em>The program should take time proportional to n in the worst case. It should be fast enough to
 process any 64-bit long integer in a fraction of a second.</em>
