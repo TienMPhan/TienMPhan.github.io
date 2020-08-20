@@ -17,11 +17,11 @@ title: Coding
 
 <div class="home">
 
-<div class="site-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
-  <div class="scrim {% if site.cover %}has-cover{% endif %}">
+<div class="site-header-container {% if site.headimg %}has-cover{% endif %}" {% if site.headimg %}style="background-image: url({{ site.headimg | prepend: site.baseurl }});"{% endif %}>
+  <div class="scrim {% if site.headimg %}has-cover{% endif %}">
     <header class="site-header">
-      <h1 class="title">{{ site.title }}</h1>
-      {% if site.subtitle %}<p class="subtitle">{{ site.subtitle }}</p>{% endif %}
+      <h1 class="title">{{ site.codetitle }}</h1>
+      {% if site.codesubtitle %}<p class="subtitle">{{ site.codesubtitle }}</p>{% endif %}
     </header>
   </div>
 </div>
