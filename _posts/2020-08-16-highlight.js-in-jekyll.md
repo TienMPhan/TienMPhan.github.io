@@ -25,17 +25,17 @@ comments: true
 
 - Or you can [download](https://highlightjs.org/download/) and link the library along with one of the styles and calling `initHighlightingOnLoad`:
 
-```html
+{% highlight html %}
 <link rel="stylesheet" href="/path/to/styles/atom-one-dark.css">
 <script src="/path/to/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-```
+{% endhighlight %}
 
 and change the [highlightjs theme](https://highlightjs.org/static/demo/) in `_config.yml`:
 
-```
+{% highlight yml %}
 highlightjs_theme: "atom-one-dark"
-```
+{% endhighlight %}
 
 ### Usage
 
