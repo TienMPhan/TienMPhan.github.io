@@ -16,7 +16,8 @@ title: Research
 
   <div class="wrapper">
     <ul class="post-list">
-      {% for post in site.research %}
+      {% assign researchposts = site.research | sort: 'date' | reverse%}
+      {% for post in researchposts %}%}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

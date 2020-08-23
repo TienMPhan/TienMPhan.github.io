@@ -6,7 +6,7 @@ comments: false
 
 ![](/assets/mindset/kaizen.jpg)
 
-(excerpt from <strong>One small step can change your life</strong> --- Robert Maurer)
+(excerpts from <strong>One small step can change your life</strong> --- Robert Maurer)
 
 <em>All changes, even positive ones, are scary. Attempts to reach goals through radical or revolutionary means often fail because they heighten fear. But the small steps of kaizen disarm the brain’s fear response, stimulating rational thought and creative play.</em>
 

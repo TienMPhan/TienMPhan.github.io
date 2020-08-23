@@ -17,7 +17,8 @@ title: Mindset
 
   <div class="wrapper">
     <ul class="post-list">
-      {% for post in site.mindset %}
+      {% assign mindsetposts = site.mindset | sort: 'date' | reverse%}
+      {% for post in mindsetposts %}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
