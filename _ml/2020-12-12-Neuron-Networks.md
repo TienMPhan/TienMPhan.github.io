@@ -62,3 +62,71 @@ $z^{(j+1)} = \Theta^{(j)}a^{(j)}$
 $h_\theta(x) = a^{(j+1)} = g(z^{(j+1)})$
 
 Notice that in this __last step__, between layer $j$ and layer $j+1$, we are doing __exactly the same thing__ as we did in logistic regression. Adding all these intermediate layers in neural networks allows us to more elegantly produce interesting and more complex non-linear hypotheses.
+
+### Examples and Intuitions I
+
+A simple example of applying neural networks is by predicting $x_1$ **AND** $x_2$, which is the logical 'and' operator and is only true if both $x_1$ and $0x_2$ are 1.
+
+The graph of our functions looks like:
+
+$$\begin{align*}\begin{bmatrix}x_0 \newline x_1 \newline x_2\end{bmatrix} \rightarrow\begin{bmatrix}g(z^{(2)})\end{bmatrix} \rightarrow h_\Theta(x)\end{align*}$$
+
+Let's consider the first theta matrix:
+
+$\Theta = [-30 \,\, 20 \,\, 20]$
+
+This will cause the output of our hypothesis to only be positive if both $x_1$ and $x_2$ are 1. In other words:
+
+$$\begin{align*}& h_\Theta(x) = g(-30 + 20x_1 + 20x_2) \newline \newline & x_1 = 0 \ \ and \ \ x_2 = 0 \ \ then \ \ g(-30) \approx 0 \newline & x_1 = 0 \ \ and \ \ x_2 = 1 \ \ then \ \ g(-10) \approx 0 \newline & x_1 = 1 \ \ and \ \ x_2 = 0 \ \ then \ \ g(-10) \approx 0 \newline & x_1 = 1 \ \ and \ \ x_2 = 1 \ \ then \ \ g(10) \approx 1\end{align*}$$
+
+So we have constructed one of the fundamental operations in computers by using a small neural network rather than using an actual AND gate. Neural networks can also be used to simulate all the other logical gates. The following is an example of the logical operator '**OR**', meaning **either** $x_1$ is true or $x_2$ is true, or **both**.
+
+### Examples and Intuitions II
+
+The $\Theta^{(1)}$ matrices for AND, NOR, and OR are:
+
+AND: $\Theta^{(1)} = [-30 \,\, 20 \,\, 20]$
+
+NOR: $\Theta^{(1)} = [10 \,\, -20 \,\, -20]$
+
+OR: $\Theta^{(1)} = [-10 \,\, 20 \,\, 20]$
+
+We can combine these to get the XNOR logical operator (which gives 1 if $x_1$ and $x_2$ are both 0 or both 1).
+
+$$\begin{align*}\begin{bmatrix}x_0 \newline x_1 \newline x_2\end{bmatrix} \rightarrow\begin{bmatrix}a_1^{(2)} \newline a_2^{(2)} \end{bmatrix} \rightarrow\begin{bmatrix}a^{(3)}\end{bmatrix} \rightarrow h_\Theta(x)\end{align*}$$
+
+For the transition between the first and second layer, we'll use a $\Theta^{(1)}$ matrix that combines the values for AND and NOR:
+
+$\Theta^{(1)} = [-30 \,\, 20 \,\, 20 \,\, 10 \,\, -20 \,\, -20]$
+
+For the transition between the second and third layer, we'll use $\Theta^{(2)}$ matrix that uses the value for OR:
+
+$\Theta^{(2)} = [-10 \,\, 20 \,\, 20]$
+
+The values for our nodes are:
+
+$$\begin{align*}& a^{(2)} = g(\Theta^{(1)} \cdot x) \newline& a^{(3)} = g(\Theta^{(2)} \cdot a^{(2)}) \newline& h_\Theta(x) = a^{(3)}\end{align*}$$
+
+And there we have the XNOR operator using a hidden layer with two nodes! The following summarizes the above algorithm:
+
+![](/assets/ml/xnor_operator.png)
+
+### Multiclass classification
+
+To classify data into multiple classes, we let our hypothesis function return a vector of values. Say we wanted to classify our data into one of four categories. We will use the following example to see how this classification is done. This algorithm takes as input an image and classifies it accordingly
+
+![](/assets/ml/one_vs_all.png)
+
+We can define our set of resulting classes as $y$:
+
+$$\begin{align*}y=\begin{bmatrix}1 \newline 0 \newline 0 \newline 0\end{bmatrix},\,\begin{bmatrix}0 \newline 1 \newline 0 \newline 0\end{bmatrix}, \, \begin{bmatrix}0 \newline 0 \newline 1 \newline 0\end{bmatrix}, \,\begin{bmatrix}0 \newline 0 \newline 1 \newline 0\end{bmatrix}\end{align*}$$
+
+Each $y^{(i)}$ represents a different image corresponding to either a car, pedestrian, truck, or motorcycle. The inner layers, each provide us with some new information which leads to our final hypothesis function. The setup looks like:
+
+$$\begin{align*}\begin{bmatrix}x_0 \newline x_1 \newline x_2 \newline ... \newline x_n \end{bmatrix}  \rightarrow \begin{bmatrix}a_0^{(2)} \newline a_1^{(2)} \newline a_2^{(2)} \newline ... \end{bmatrix} \rightarrow \begin{bmatrix}a_0^{(3)} \newline a_1^{(3)} \newline a_2^{(3)} \newline ... \end{bmatrix} \rightarrow ... \rightarrow \begin{bmatrix}h_\Theta(x)_1 \newline h_\Theta(x)_2 \newline h_\Theta(x)_3 \newline h_\Theta(x)_4 \end{bmatrix}\end{align*}$$
+
+Our resulting hypothesis for one set of inputs may look like:
+
+$h_\theta(x) = [0 \,\, 0 \,\, 1 \,\, 0]$
+
+In which case our resulting class is the third one down, or $h_\Theta(x)_3$ which represents the motorcycle.
