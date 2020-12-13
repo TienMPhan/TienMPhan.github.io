@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kaizen - What does it work?
+title: Kaizen - How does it work?
 comments: false
 ---
 
