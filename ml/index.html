@@ -28,7 +28,8 @@ title: ML
 
   <div class="wrapper">
     <ul class="post-list">
-      {% for post in site.ml %}
+      {% assign mlposts = site.ml | sort: 'date' | reverse%}
+      {% for post in mlposts %}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
