@@ -3,6 +3,13 @@ layout: post
 title: Neuron Networks
 comments: true
 ---
+*Grant Sanderson* puts "Neuron Networks" in an intuitive way in a video in his 3Blue1Brown Youtube Channel
+
+<div align = "center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+----
 (Machine Learning Coursera - Andrew Ng)
 
 ### Model Representation
