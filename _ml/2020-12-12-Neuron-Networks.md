@@ -16,19 +16,23 @@ comments: true
 
  At a very simple level, neurons are basically computational units that take inputs (__dendrites__) as electrical inputs (called "__spikes__") that are channeled to outputs (__axons__). In a ML model, our dendrites are like the input features $x_1 ... x_n$ and the output is the result of our hypothesis function. In this model, $x_0$ input node is sometimes called the "__biased__ unit", it is always equal to 1. In neural networks, we use the same logistic function as in classification, $\frac{1}{1 + e^{-\theta^Tx}}$, yet we sometimes call it a sigmoid (logistic) __activation__ function. In this situation, our "theta" parameters are sometimes called "__weights__".
 
+![](\assets\ml\neural1.jpeg)
+
 Visually, a simplistic representation looks like:
 
-$[x_0 x_1 x_2] \longrightarrow [\,\,] \longrightarrow h_\theta(x)$
+$$[x_0 x_1 x_2] \longrightarrow [\,\,] \longrightarrow h_\theta(x)$$
 
 Our input nodes (layer 1), also known as the "input layer", go into another node (layer 2), which finally outputs the hypothesis function, known as the "output layer". We can have intermediate layers of nodes between the input and output layers called the "hidden layers." In this example, we label these intermediate or "hidden" layer nodes $a_0^{(2)}...a_n^{(2)}$ and call them "activation units."
 
-$a_i^{(j)}$ = "activation" of unit i in layer j
 
-$\Theta^(j)$ = matrix of weights controlling function mapping from layer $j$ to layer $j+1$
+>$a_i^{(j)}$ = "activation" of unit $i$ in layer $j$ <br>
+$\Theta^{(j)}$ = matrix of weights controlling function mapping from layer $j$ to layer $j+1$
+
 
 If we had one hidden layer, it would look like:
 
-$[x_0 x_1 x_2] \longrightarrow [a_1^{(2)}a_2^{(2)}a_3^{(2)}] \longrightarrow h_\theta(x)$
+$$\fbox{
+$[x_0 x_1 x_2] \longrightarrow [a_1^{(2)}a_2^{(2)}a_3^{(2)}] \longrightarrow h_\theta(x)$}$$
 
 The values for each of the activation nodes is obtained as follows:
 
