@@ -3,7 +3,7 @@ layout: post
 title: Logistic Regression
 comments: true
 ---
-(Machine Learning Coursera - Andrew Ng))
+(Machine Learning Coursera - Andrew Ng)
 
 "Logistic Regression" is actually an approach to classification problems, not regression problems.
 
