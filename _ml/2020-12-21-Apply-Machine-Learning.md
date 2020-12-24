@@ -102,3 +102,28 @@ In order to choose the model and the regularization $\lambda$, we need:
 4. Compute the cross validation error using the learned $\Theta$ (computed with $\lambda$) on the $J_{\rm CV}(\Theta)$ without regularization or $\lambda = 0$.
 5. Select the best combo that produces the lowest error on the cross validation set.
 6. Using the best combo $\Theta$ and $\lambda$, apply it on $J_{\rm test}(\Theta)$ to see if it has a good generalization of the problem.
+
+### <span style="color:red">**Learning Curves**</span>
+
+Training $3$ examples will easily have $0$ errors because we can always find a quadratic curve that exactly touches $3$ points.
+
+* As the training set gets larger, the error for a quadratic function increases.
+* The error value will plateau out after a certain m, or training set size.
+
+_<span style="color:blue">Experience high bias</span>_
+
+* Low training set size: causes $J_{\rm train}(\Theta)$ to be low and $J_{\rm CV}(\Theta)$ to be high.
+* Large training set size: causes both $J_{\rm train}(\Theta)$ and $J_{\rm CV}(\Theta)$ to be high $J_{\rm train}(\Theta) \approx J_{\rm CV}(\Theta)$.
+
+If a learning algorithm is suffering from **high bias**, getting more training data **will not (by itself) help much**.
+
+<img src="/assets/ml/highBias.png">
+
+_<span style="color:blue"> Experience high variance</span>_
+
+* **Low training set size**: $J_{\rm train}(\Theta)$ will be low and $J_{\rm CV}(\Theta)$ will be high.
+* **Large training set size**: $J_{\rm train}(\Theta)$ increases with training set size and $J_{\rm CV}(\Theta)$ continues to decrease without leveling off. Also, $J_{\rm train}(\Theta) < J_{\rm CV}(\Theta)$ but the difference between them remains significant.
+
+If a learning algorithm is suffering from high variance, getting more training data is likely to help.
+
+<img src="/assets/ml/highVariance.png">
