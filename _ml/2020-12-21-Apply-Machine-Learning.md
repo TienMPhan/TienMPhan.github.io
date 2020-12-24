@@ -57,3 +57,48 @@ We can now calculate three separate error values for the three different sets us
 
 
 This way, the degree of the polynomial d has not been trained using the test set.
+
+### <span style="color:red">**Diagnosing Bias vs. Variance**</span>
+
+In this section we examine the relationship between the degree of the polynomial d and the underfitting or overfitting of our hypothesis.
+
+* We need to distinguish whether bias or variance is the problem contributing to bad predictions.
+* High bias is underfitting and high variance is overfitting. Ideally, we need to find a golden mean between these two.
+
+The training error will tend to <span style="color: purple">**decrease**</span> as we increase the degree d of the polynomial.
+
+At the same time, the cross validation error will tend to <span style="color: purple">**decrease**</span> as we increase d up to a point, and then it will <span style="color: purple">**increase**</span> as d is increased, forming a convex curve.
+
+* High bias (underfitting): both $J_{\rm train}(\Theta)$ and $J_{\rm CV}(\Theta)$ will be high. Also, $J_{\rm CV}(\Theta) \approx J_{\rm train}(\Theta)$.
+* High variance (overfitting): $J_{\rm train}(\Theta)$ will be low and $J_{\rm CV}(\Theta)$ will be much greater than $J_{\rm train}(\Theta)$.
+
+The is summarized in the figure below:
+
+<img src="/assets/ml/biased_variance.png">
+
+### <span style="color:red">**Regularization and Bias/Variance**</span>
+
+Instead of looking at the degree d contributing to bias/variance, now we will look at the regularization parameter $\lambda$.
+
+* Large $\lambda$: High bias (underfitting)
+* Intermediate $\lambda$: just right
+* Small $\lambda$: High variance (overfitting)
+
+A large lambda heavily penalizes all the $\Theta$ parameters, which greatly simplifies the line of our resulting function, so causes underfitting.
+
+The relationship of $\lambda$ to the training set and the variance set is as follows:
+* **<span style="color:green">Low</span>** $\lambda$: $J_{\rm train}(\Theta)$ is low and $J_{\rm CV}(\Theta)$ is high (high variance/overfitting).
+* **<span style="color:green">Intermediate</span>** $\lambda$: $J_{\rm train}(\Theta)$ and $J_{\rm CV}(\Theta)$ are somewhat low and $J_{\rm CV}(\Theta) \approx J_{\rm train}(\Theta)$.
+* **<span style="color:green">Large</span>** $\lambda$: both $J_{\rm train}(\Theta)$ and $J_{\rm CV}(\Theta)$ will be high (underfitting/high bias).
+
+The figure below illustrates the relationship between lambda and the hypothesis:
+<img src="/assets/ml/Features-and-polynom-degree-fix.png">
+
+In order to choose the model and the regularization $\lambda$, we need:
+
+1. Create a list of $\lambda$s (i.e. $\lambda \in$ {0, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28, 2.56, 5.12, 10.24});
+2. Create a set of models with different degrees or any other variants.
+3. Iterate through the $\lambda$s and for each $\lambda$ go through all the models to learn some $\Theta$.
+4. Compute the cross validation error using the learned $\Theta$ (computed with $\lambda$) on the $J_{\rm CV}(\Theta)$ without regularization or $\lambda = 0$.
+5. Select the best combo that produces the lowest error on the cross validation set.
+6. Using the best combo $\Theta$ and $\lambda$, apply it on $J_{\rm test}(\Theta)$ to see if it has a good generalization of the problem.
