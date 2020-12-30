@@ -74,7 +74,7 @@ At the same time, the cross validation error will tend to <span style="color: pu
 
 The is summarized in the figure below:
 
-<img src="/assets/ml/biased_variance.png">
+<img src="/assets/ml/biased_variance.png" style="width:400px;">
 
 ### <span style="color:red">**Regularization and Bias/Variance**</span>
 
@@ -92,7 +92,7 @@ The relationship of $\lambda$ to the training set and the variance set is as fol
 * **<span style="color:green">Large</span>** $\lambda$: both $J_{\rm train}(\Theta)$ and $J_{\rm CV}(\Theta)$ will be high (underfitting/high bias).
 
 The figure below illustrates the relationship between lambda and the hypothesis:
-<img src="/assets/ml/Features-and-polynom-degree-fix.png">
+<img src="/assets/ml/Features-and-polynom-degree-fix.png" style="width:400px;">
 
 In order to choose the model and the regularization $\lambda$, we need:
 
@@ -117,7 +117,7 @@ _<span style="color:blue">Experience high bias</span>_
 
 If a learning algorithm is suffering from **high bias**, getting more training data **will not (by itself) help much**.
 
-<img src="/assets/ml/highBias.png">
+<img src="/assets/ml/highBias.png" style="width:500px;">
 
 _<span style="color:blue"> Experience high variance</span>_
 
@@ -126,7 +126,7 @@ _<span style="color:blue"> Experience high variance</span>_
 
 If a learning algorithm is suffering from high variance, getting more training data is likely to help.
 
-<img src="/assets/ml/highVariance.png">
+<img src="/assets/ml/highVariance.png" style="width:500px;">
 
 ### <span style="color:red">**Deciding What to Do Next**</span>
 

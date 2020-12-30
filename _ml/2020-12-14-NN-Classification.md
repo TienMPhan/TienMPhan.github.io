@@ -51,7 +51,7 @@ Given the training set ${(x^{(1)}, y^{(1)}), (x^{(m)}, y^{(m)})}$
 For training example $t = 1$ to $m$:
 1. Set $a^{(1)} := x^{(t)}$
 2. Perform forward propagation to compute $a^{(l)}$ for $l = 2, 3, ...L$.
-		![](/assets/ml/gradient_comp.png)
+		<img src="/assets/ml/gradient_comp.png" style="width:500px;">
 3. Using $y^{(t)}$, compute $\delta^{(l)} = a^{(l)} - y^{(t)}$
 where $L$ is our total number of layers and $a^{(L)}$ is the vector of outputs of the activation units for the last layer. So our "error values" for the last layer are simply the differences of our actual results in the last layer and the correct outputs in $y$. To get the delta values of the layers before the last layer, we can use an equation that steps us back from right to left:
 4. Compute $\delta^{(L-1)}$, $\delta^{(L-2)}$,...,$\delta^{(2)}$, using

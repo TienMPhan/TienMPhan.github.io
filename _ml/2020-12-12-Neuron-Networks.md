@@ -16,7 +16,7 @@ comments: true
 
  At a very simple level, neurons are basically computational units that take inputs (__dendrites__) as electrical inputs (called "__spikes__") that are channeled to outputs (__axons__). In a ML model, our dendrites are like the input features $x_1 ... x_n$ and the output is the result of our hypothesis function. In this model, $x_0$ input node is sometimes called the "__biased__ unit", it is always equal to 1. In neural networks, we use the same logistic function as in classification, $\frac{1}{1 + e^{-\theta^Tx}}$, yet we sometimes call it a sigmoid (logistic) __activation__ function. In this situation, our "theta" parameters are sometimes called "__weights__".
 
-![](\assets\ml\neural1.jpeg)
+<img src="\assets\ml\neural1.jpeg" style="width:400px;">
 
 Visually, a simplistic representation looks like:
 
@@ -38,7 +38,7 @@ The values for each of the activation nodes is obtained as follows:
 
 $$\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}$$
 
-This is saying that we compute our activation nodes by using a 3×4 matrix of parameters. We apply each row of the parameters to our inputs to obtain the value for one activation node. Our hypothesis output is the logistic function applied to the sum of the values of our activation nodes, which have been multiplied by yet another parameter matrix $\Theta^{(2)}$ containing the weights for our second layer of nodes. Each layer has its own matrix of weights, $\Theta^{(j)}$.
+This is saying that we compute our activation nodes by using a $3\times4$ matrix of parameters. We apply each row of the parameters to our inputs to obtain the value for one activation node. Our hypothesis output is the logistic function applied to the sum of the values of our activation nodes, which have been multiplied by yet another parameter matrix $\Theta^{(2)}$ containing the weights for our second layer of nodes. Each layer has its own matrix of weights, $\Theta^{(j)}$.
 
 If the network has $s_j$ units in layer $j$ and $s_{j+1}$ units in layer $j+1$, then $\Theta^(j)$ will be of dimension $s_{j+1} \times (s_j +1)$.
 
@@ -120,13 +120,13 @@ $$\begin{align*}& a^{(2)} = g(\Theta^{(1)} \cdot x) \newline& a^{(3)} = g(\Theta
 
 And there we have the XNOR operator using a hidden layer with two nodes! The following summarizes the above algorithm:
 
-![](/assets/ml/xnor_operator.png)
+<img src="/assets/ml/xnor_operator.png" style="width:600px;">
 
 ### Multiclass classification
 
 To classify data into multiple classes, we let our hypothesis function return a vector of values. Say we wanted to classify our data into one of four categories. We will use the following example to see how this classification is done. This algorithm takes as input an image and classifies it accordingly
 
-![](/assets/ml/one_vs_all.png)
+<img src="/assets/ml/one_vs_all.png" style="width:600px;">
 
 We can define our set of resulting classes as $y$:
 
