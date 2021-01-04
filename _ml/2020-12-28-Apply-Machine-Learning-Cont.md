@@ -50,6 +50,8 @@ For this we can use **Precision/Recall**.
 * Predicted: 0, Actual: 1 --- False negative
 * Predicted: 1, Actual: 0 --- False positive
 
+ **Precision** means the percentage of your results which are relevant. On the other hand, **recall** refers to the percentage of total relevant results correctly classified by your algorithm
+
 **Precision**: of all patients we predicted where $y=1$, what fraction actually has cancer?
 
 $$\frac{\rm True\,Positives}{\rm Total\,number\,of\,predicted\,positives} = \frac{\rm True\,Positives}{\rm True\,Positives + False\,Positives}$$
@@ -63,6 +65,8 @@ These two metrics give us a better sense of how our classifier is doing. We want
 In the example at the beginning of the section, if we classify all patients as 0, then our **recall** will be $\dfrac{0}{0 + f} = 0$, so despite having a lower error percentage, we can quickly see it has worse recall.
 
 $$\rm Accuracy = \frac{true\,possitive + true\,negative}{total\,population}$$
+
+<img src="/assets/ml/Precision_Recall.png" style="width:800px">
 
 **Note**: if an algorithm predicts only negatives like it does in one of exercises, the precision is not defined, it is impossible to divide by 0. F1 score will not be defined too.
 
@@ -83,8 +87,9 @@ In the opposite example, we can lower our threshold:
 * Predict $0$ if: $h_{\theta} < 0.3$
 
 That way, we get a very **safe** prediction. This will cause **higher recall** but **lower precision**. <br>
-The greater the threshold, the greater the precision and the lower the recall. <br>
-The lower the threshold, the greater the recall and the lower the precision. <br>
+>* The greater the threshold, the greater the precision and the lower the recall. <br>
+>* The lower the threshold, the greater the recall and the lower the precision. <br>
+
 In order to turn these two metrics into one single number, we can take the **F value**. <br>
 One way is to take the **average**:
 
