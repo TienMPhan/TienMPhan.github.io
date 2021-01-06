@@ -155,11 +155,11 @@ This "similarity" function is called a **Gaussian Kernel**. It is a specific exa
 
 The similarity function can also be written as follows:
 
-$$f_i = {\rm similarity}(x, l^{(i)}) = \exp(-\frac{\sum_{j=1}^n (x - l^{(i)})^2}{2\sigma^2})$$
+$$f_i = {\rm similarity}(x, l^{(i)}) = \exp(-\frac{\sum_{j=1}^n (x_j - l^{(i)}_j)^2}{2\sigma^2})$$
 
 There are a couple properties of the similarity function:
 
-* If $x \approx l^{(i)}$, then $f_i = \exp(-\frac{\approx 0^2}{2\sigma^2}) \approx 0$.
+* If $x \approx l^{(i)}$, then $f_i = \exp(-\frac{\approx 0^2}{2\sigma^2}) \approx 1$.
 * If $x$ is far from $l^{(i)}$, then $f_i = \exp(-\frac{({\rm large \, number})^2}{2\sigma^2}) \approx 0$.
 
 In other words, if $x$ and the landmark are close, then the similarity will be close to $1$, and if $x$ and the landmark are far away from each other, the similarity will be close to $0$.
@@ -178,7 +178,7 @@ Given example $x$:
 
 $$f_1 = {\rm similarity}(x, l^{(1)}), \, f_2 = {\rm similarity}(x, l^{(2)}), \, f_3 = {\rm similarity}(x, l^{(3)})$$, and so on.
 
-This gives us a "feature vector", $f_{(i)}$ of all our features for example $x_{(i)}$. We may also set $f_0 = 1$ to correspond with $\Theta_0$. Thus given training example $x_{(i)}$:
+This gives us a "<span style="color:green">_feature vector_</span>", $f_{(i)}$ of all our features for example $x_{(i)}$. We may also set $f_0 = 1$ to correspond with $\Theta_0$. Thus given training example $x_{(i)}$:
 
 $$x^{(i)} \rightarrow [f_1^{(i)} = {\rm similarity}(x^{(i)}, l^{(1)}), \, f_2^{(i)} = {\rm similarity}(x^{(i)}, l^{(2)}), \,... f_m^{(i)} = {\rm similarity}(x^{(i)}, l^{(m)})]$$
 
@@ -189,3 +189,84 @@ $${\rm min_{\Theta}} \, C \sum_{i=1}^m y^{(i)} {\rm cost}_1(\Theta^Tf^{(i)}) + (
 Using kernels to generate $f(i)$ is not exclusive to SVMs and may also be applied to logistic regression. However, because of computational optimizations on SVMs, kernels combined with SVMs is much faster than with other algorithms, so kernels are almost always found combined only with SVMs.
 
 **Choosing SVM Parameters**
+
+Choosing $C$ ($\rm C = 1/\lambda$):
+* If C is large, then we get higher variance/lower bias.
+* If C is small, then we get lower variance/higher bias.
+
+The other parameter we must choose is $\sigma^2$ from the Gaussian Kernel function:
+
+* With a large $\sigma^2$, the features $f_i$ vary more smoothly, causing higher bias and lower variance.
+* With a small $\sigma^2$, the features $f_i$ vary less smoothly, causing lower bias and higher variance.
+
+**Using An SVM**
+
+There are lots of good SVM libraries already written. A. Ng often uses `liblinear` and `libsvm`. In practical application, you should use one of these libraries rather than rewrite the functions.
+
+In practical application, the choices you do need to make are:
+
+* Choice of parameter $C$,
+* Choice of kernel (similarity function),
+* No kernel ("linear" kernel) -- gives standard linear classifier,
+* Choose when n is large and when m is small,
+* Gaussian Kernel (above) -- need to choose $\sigma^2$,
+* Choose when n is small and m is large.
+
+The library may ask you to provide the kernel function.
+
+>Note: do perform feature scaling before using the Gaussian Kernel.
+
+>Note: not all similarity functions are valid kernels. They must satisfy "Mercer's Theorem" which guarantees that the SVM package's optimizations run correctly and do not diverge.
+
+
+**Mercer’s Theorem**:
+
+>According to Mercer’s theorem, if a function $K(a, b)$ respects a few mathematical con‐
+ditions called Mercer’s conditions (e.g., $K$ must be continuous and symmetric in its
+arguments so that $K(a, b) = K(b, a)$, etc.), then there exists a function φ that maps a
+and b into another space (possibly with much higher dimensions) such that $K(a, b) =
+\phi(a)^T \phi(b)$. You can use $K$ as a kernel because you know $\phi$ exists, even if you don’t know what $\phi$ is. In the case of the Gaussian RBF kernel, it can be shown that $\phi$ maps each training instance to an infinite-dimensional space, so it’s a good thing you don’t need to actually perform the mapping!<br>
+Note that some frequently used kernels (such as the sigmoid kernel) don’t respect all
+of Mercer’s conditions, yet they generally work well in practice.
+
+You want to train C and the parameters for the kernel function using the training and <span style="color:green">*cross-validation datasets*</span>.
+
+### <span style="color: purple">**Review Questions**</span>
+
+**Q1**. What is the fundamental idea behind SVMs?
+
+>The fundamental idea behind Support Vector Machines is to fit the **widest possible** “street” between the classes. In other words, the goal is to have the *largest possible margin* between the decision boundary that separates the two classes and the training instances. When performing soft margin classification, the SVM searches for a compromise between perfectly separating the two classes and having the widest possible street (i.e., a few instances may end up on the street). Another key idea is to use kernels when training on nonlinear datasets.
+
+**Q2**. What is a support vector?
+
+>After training an SVM, a **support vector** is any instance located on the “street” (see
+the previous answer), including its border. The decision boundary is entirely
+determined by the support vectors. Any instance that is not a support vector (i.e.,
+is off the street) has no influence whatsoever; you could remove them, add more
+instances, or move them around, and as long as they stay off the street they won’t
+affect the decision boundary. Computing the predictions only involves the support vectors, not the whole training set.
+
+**Q3**. Why is it important to scale the inputs when using SVMs?
+
+>SVMs try to fit the largest possible “street” between the classes (see the first
+answer), so if the training set is not scaled, the SVM will tend to neglect small
+features.
+
+**Q4**. Can an SVM classifier output a confidence score when it classifies an instance? What about a probability?
+
+>If the optimization problem is convex (such as Linear Regression or Logistic
+Regression), and assuming the learning rate is not too high, then all Gradient
+Descent algorithms will approach the global optimum and end up producing
+fairly similar models. However, unless you gradually reduce the learning rate,
+Stochastic GD and Mini-batch GD will never truly converge; instead, they will
+keep jumping back and forth around the global optimum. This means that even
+if you let them run for a very long time, these Gradient Descent algorithms will
+produce slightly different models.
+
+**Q5**. Should you use the primal or the dual form of the SVM problem to train a model on a training set with millions of instances and hundreds of features?
+
+>If the validation error consistently goes up after every epoch, then one possibility
+is that the learning rate is too high and the algorithm is diverging. If the training
+error also goes up, then this is clearly the problem and you should reduce the
+learning rate. However, if the training error is not going up, then your model is
+over-fitting the training set and you should stop training.
