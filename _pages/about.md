@@ -27,8 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a computational biophysicist and chemist with over four years of postdoctoral experience in molecular modeling, biomolecular simulations, and force-field development. My research explores protein conformational dynamics, protein–protein and protein–nucleic acid interactions, and the refinement of classical force fields for more accurate biomolecular modeling.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I have published 10+ peer-reviewed papers in leading journals, including Molecular Cell, Advanced Science, JACS, eLife, Biophysical Journal, and Nucleic Acids Research, with more than 250 citations. Collaborating closely with experimental groups, I bridge in silico and in vitro/in vivo studies and have contributed to NIH grants exceeding $3 million.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Beyond research, I mentor young scientists in molecular modeling, simulation workflows, and computational data analysis, and I am passionate about combining scientific rigor with creative visualization to communicate complex molecular mechanisms.
