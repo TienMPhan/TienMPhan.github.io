@@ -32,3 +32,4 @@ I am a computational biophysicist and chemist with over four years of postdoctor
 I have published 10+ peer-reviewed papers in leading journals, including Molecular Cell, Advanced Science, JACS, eLife, Biophysical Journal, and Nucleic Acids Research, with more than 250 citations. Collaborating closely with experimental groups, I bridge in silico and in vitro/in vivo studies and have contributed to NIH grants exceeding $3 million.
 
 Beyond research, I mentor young scientists in molecular modeling, simulation workflows, and computational data analysis, and I am passionate about combining scientific rigor with creative visualization to communicate complex molecular mechanisms.
+
