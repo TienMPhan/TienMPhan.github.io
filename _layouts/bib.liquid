@@ -253,6 +253,14 @@
       {% if entry.website %}
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {% endif %}
+      {% if entry.cover %}
+        {% if entry.cover contains '://' %}
+          <a href="{{ entry.cover }}" class="btn btn-sm z-depth-0" role="button">Cover</a>
+        {% else %}
+          {# If a relative path is provided, assume images are under /assets/img/covers/ #}
+          <a href="{{ entry.cover | prepend: '/assets/img/covers/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Cover</a>
+        {% endif %}
+      {% endif %}
     </div>
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}

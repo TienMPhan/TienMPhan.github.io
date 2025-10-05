@@ -1,9 +1,25 @@
 "AJP":
   url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+  # color: "#00369f"
+  color: "#009f36"
 
 "PhysRev":
   url: https://journals.aps.org/
+
+"JACS":
+  color: "#009f36"
+
+"Biophys. J.":
+  color: "#27BEF5"
+
+"JPCB":
+  color: "#02FAD0"
+
+"PRE":
+  color: "#27F59C"
+
+"NAR":
+  color: "#D6F527"
 
 "Vision":
   color: "#009f36"
