@@ -21,5 +21,14 @@
 "NAR":
   color: "#D6F527"
 
-"Vision":
-  color: "#009f36"
+"Mol. Cell":
+  color: "#F5C227"
+
+"eLife":
+  color: "#A627F5"
+
+"Biochemistry":
+  color: "#EEF527"
+
+"J. Chem. Inf. Model.":
+  color: "#27F549"
