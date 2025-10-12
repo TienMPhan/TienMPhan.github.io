@@ -320,14 +320,30 @@
             ></span>
           {% endif %}
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
+            {% assign gs_user = site.data.socials.scholar_userid %}
+            {% assign gs_id = entry.google_scholar_id %}
+            {% assign gs_count = nil %}
+            {% comment %}
+              Prefer a manual override field in the .bib (google_scholar_citations),
+              then fall back to a build-time cache in _data/scholar.yml
+              at key: google_scholar: "<paper_id>": <int>
+            {% endcomment %}
+            {% if entry.google_scholar_citations %}
+              {% assign gs_count = entry.google_scholar_citations %}
+            {% elsif site.data.scholar and site.data.scholar.google_scholar and gs_id and site.data.scholar.google_scholar[gs_id] %}
+              {% assign gs_count = site.data.scholar.google_scholar[gs_id] %}
+            {% endif %}
+            {% unless gs_count %}
+              {% assign gs_count = 'N/A' %}
+            {% endunless %}
             <a
-              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.data.socials.scholar_userid }}&citation_for_view={{ site.data.socials.scholar_userid }}:{{ entry.google_scholar_id }}"
+              href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user={{ gs_user }}&amp;citation_for_view={{ gs_user }}:{{ gs_id }}"
               aria-label="Google Scholar link"
               role="button"
             >
               <img
-                src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.data.socials.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
-                alt="{% google_scholar_citations site.data.socials.scholar_userid entry.google_scholar_id %} Google Scholar citations"
+                src="https://img.shields.io/badge/scholar-{{ gs_count }}-4285F4?logo=googlescholar&amp;labelColor=beige"
+                alt="{{ gs_count }} Google Scholar citations"
               >
             </a>
           {% endif %}

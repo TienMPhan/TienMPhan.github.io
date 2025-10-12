@@ -1,0 +1,19 @@
+
+
+# Minimal cache for Google Scholar citation counts
+# Key = paper's Google Scholar "citation_for_view" id
+# Value = integer citation count to display on the badge
+google_scholar:
+  "O0Rlwm4AAAAJ:YsMSGLbcyi4C": 89
+  "O0Rlwm4AAAAJ:Y0pCki6q_DkC": 56
+  "O0Rlwm4AAAAJ:ymY9cBF3mdcC": 24
+  "O0Rlwm4AAAAJ:W7OEmFMy1HYC": 24
+  "O0Rlwm4AAAAJ:0EnyYjriUFMC": 21
+  "O0Rlwm4AAAAJ:eQOLeE2rZwMC": 17
+  "O0Rlwm4AAAAJ:0KyAp5RtaNEC": 8
+  "O0Rlwm4AAAAJ:SpPTWFSNUtQC": 6
+  "O0Rlwm4AAAAJ:j8pvxH-kN2QC": 5
+  "O0Rlwm4AAAAJ:ufrVoPGSRksC": 4
+  "O0Rlwm4AAAAJ:lg2tdxc6qMwC": 2
+  "O0Rlwm4AAAAJ:cB__R-XWw9UC": 1
+  "O0Rlwm4AAAAJ:WF5omc3nYNoC": 1
