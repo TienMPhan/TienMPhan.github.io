@@ -4,16 +4,17 @@
 # Key = paper's Google Scholar "citation_for_view" id
 # Value = integer citation count to display on the badge
 google_scholar:
-  "YsMSGLbcyi4C": 89
-  "Y0pCki6q_DkC": 56
-  "ymY9cBF3mdcC": 24
-  "W7OEmFMy1HYC": 24
-  "0EnyYjriUFMC": 21
-  "eQOLeE2rZwMC": 17
+  "YsMSGLbcyi4C": 90
+  "Y0pCki6q_DkC": 58
+  "ymY9cBF3mdcC": 26
+  "W7OEmFMy1HYC": 25
+  "0EnyYjriUFMC": 22
+  "eQOLeE2rZwMC": 18
   "0KyAp5RtaNEC": 8
-  "SpPTWFSNUtQC": 6
+  "SpPTWFSNUtQC": 7
   "j8pvxH-kN2QC": 5
   "ufrVoPGSRksC": 4
   "lg2tdxc6qMwC": 2
-  "cB__R-XWw9UC": 1
+  "cB__R-XWw9UC": 2
   "WF5omc3nYNoC": 1
+  "HqhvjgTjE9cC": 0
