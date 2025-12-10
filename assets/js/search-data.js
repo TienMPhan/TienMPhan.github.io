@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-a-post-with-plotly-js",
+            },{id: "post-inside-alphafold2",
+        
+          title: "Inside AlphaFold2",
+        
+        description: "a technical deep dive into the architecture",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/AlphaFold2/";
+          
+        },
+      },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
@@ -412,16 +423,19 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
+            },},{id: "news-a-long-announcement-with-details",
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+              window.location.href = "/news/announcement/";
+            },},{id: "news-our-paper-a-disordered-linker-in-the-polycomb-protein-polyhomeotic-tunes-phase-separation-and-oligomerization-has-been-published-in-molecular-cell-this-is-an-exciting-collaboration-with-prof-nicole-francis-group",
+          title: 'Our paper “A disordered linker in the Polycomb protein Polyhomeotic tunes phase separation...',
+          description: "",
+          section: "News",},{id: "news-our-paper-on-polyq-using-multi-ego-force-field-has-been-published-on-jpcb-https-doi-org-10-1021-acs-jpcb-5c06627-congrats-to-the-team-esp-avijeet-sparkles-clap",
+          title: 'Our paper on polyQ using multi-eGO force field has been published on JPCB...',
+          description: "",
+          section: "News",},{id: "news-our-paper-work-on-refining-all-atom-force-field-has-been-online-in-nature-communications-sparkles-firecracker",
+          title: 'Our paper work on refining all-atom force field has been online in Nature...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
