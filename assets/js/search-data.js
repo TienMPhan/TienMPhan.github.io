@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-inside-alphafold2",
+            },{id: "post-understanding-alphafold3",
+        
+          title: "Understanding AlphaFold3",
+        
+        description: "a quick look at the architecture",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/AlphaFold3/";
+          
+        },
+      },{id: "post-inside-alphafold2",
         
           title: "Inside AlphaFold2",
         
@@ -428,7 +439,10 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement/";
-            },},{id: "news-our-paper-a-disordered-linker-in-the-polycomb-protein-polyhomeotic-tunes-phase-separation-and-oligomerization-has-been-published-in-molecular-cell-this-is-an-exciting-collaboration-with-prof-nicole-francis-group",
+            },},{id: "news-our-paper-capturing-the-conformational-heterogeneity-of-hspb1-chaperone-oligomers-at-atomic-resolution-has-been-published-in-jacs-this-is-a-great-collaboration-with-prof-galia-debelouchina-group-also-check-out-our-cover-art-art-sparkles",
+          title: 'Our paper “Capturing the Conformational Heterogeneity of HSPB1 Chaperone Oligomers at Atomic Resolution”...',
+          description: "",
+          section: "News",},{id: "news-our-paper-a-disordered-linker-in-the-polycomb-protein-polyhomeotic-tunes-phase-separation-and-oligomerization-has-been-published-in-molecular-cell-this-is-an-exciting-collaboration-with-prof-nicole-francis-group",
           title: 'Our paper “A disordered linker in the Polycomb protein Polyhomeotic tunes phase separation...',
           description: "",
           section: "News",},{id: "news-our-paper-on-polyq-using-multi-ego-force-field-has-been-published-on-jpcb-https-doi-org-10-1021-acs-jpcb-5c06627-congrats-to-the-team-esp-avijeet-sparkles-clap",
