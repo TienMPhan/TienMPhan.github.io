@@ -80,17 +80,17 @@ d-article {
     grid-row: auto / span 4;
     justify-self: end;
     margin-top: 0em;
-    padding-left: 2em;
-    padding-right: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
     border-right: 1px solid var(--global-divider-color);
-    width: calc(max(70%, 300px));
+    width: calc(max(50%, 300px));
     margin-right: 0px;
     margin-top: 0em;
     display: grid;
     grid-template-columns:
-      minmax(8px, 1fr) [toc] auto
-      minmax(8px, 1fr) [toc-line] 1px
-      minmax(32px, 2fr);
+      minmax(4px, 1fr) [toc] auto
+      minmax(4px, 1fr) [toc-line] 1px
+      minmax(16px, 1fr);
 
     nav {
       grid-column: toc;
