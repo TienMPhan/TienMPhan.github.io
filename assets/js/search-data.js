@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-understanding-alphafold3",
+            },{id: "post-the-alphafold-revolution-in-structural-biology",
+        
+          title: "The AlphaFold revolution in Structural Biology",
+        
+        description: "From distance matrices to diffusion",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/AlphaFold-evolution/";
+          
+        },
+      },{id: "post-understanding-alphafold3",
         
           title: "Understanding AlphaFold3",
         
