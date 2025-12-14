@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-the-alphafold-revolution-in-structural-biology",
+            },{id: "post-an-overview-of-boltz-2",
+        
+          title: "An Overview of Boltz-2",
+        
+        description: "A Foundation Model for Biomolecular Structure and Binding Affinity Prediction",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Boltz2/";
+          
+        },
+      },{id: "post-the-alphafold-revolution-in-structural-biology",
         
           title: "The AlphaFold revolution in Structural Biology",
         
