@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-an-overview-of-boltz-2",
+            },{id: "post-esmfold-protein-language-model",
+        
+          title: "ESMFold - Protein Language Model",
+        
+        description: "From masked language models to protein generation",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ESM/";
+          
+        },
+      },{id: "post-an-overview-of-boltz-2",
         
           title: "An Overview of Boltz-2",
         
