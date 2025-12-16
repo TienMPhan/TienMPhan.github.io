@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-esmfold-protein-language-model",
+            },{id: "post-rfdiffusion-revolution",
+        
+          title: "RFDiffusion Revolution",
+        
+        description: "From Backbone to Atomic Precision",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/RFDiffusion/";
+          
+        },
+      },{id: "post-esmfold-protein-language-model",
         
           title: "ESMFold - Protein Language Model",
         
