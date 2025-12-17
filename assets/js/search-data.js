@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-rfdiffusion-revolution",
+            },{id: "post-inside-proteinmpnn",
+        
+          title: "Inside ProteinMPNN",
+        
+        description: "The neural network transforming computational protein design",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ProteinMPNN/";
+          
+        },
+      },{id: "post-rfdiffusion-revolution",
         
           title: "RFDiffusion Revolution",
         
