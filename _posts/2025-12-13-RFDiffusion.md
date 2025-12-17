@@ -3,7 +3,7 @@ layout: distill
 title: RFDiffusion Revolution
 date: 2025-11-16 18:51:00
 description: From Backbone to Atomic Precision
-tags: ESMFold
+tags: RFDiffusion
 categories: protein-design
 featured: true
 # toc:
