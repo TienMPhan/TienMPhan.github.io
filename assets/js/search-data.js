@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-inside-proteinmpnn",
+            },{id: "post-deep-learning-for-protein-ligand-binding",
+        
+          title: "Deep Learning for Protein-Ligand Binding",
+        
+        description: "Are We Learning Physics or Memorizing the PDB?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/DL-AffinityPred/";
+          
+        },
+      },{id: "post-inside-proteinmpnn",
         
           title: "Inside ProteinMPNN",
         
