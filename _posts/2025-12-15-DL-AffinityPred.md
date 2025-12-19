@@ -1,13 +1,12 @@
 ---
 layout: distill
 title: Deep Learning for Protein-Ligand Binding
-date: 2025-11-21 18:51:00
+date: 2025-11-22 18:51:00
 description: Are We Learning Physics or Memorizing the PDB?
-tags: Protein-Ligand
+tags: Protein-Ligand Binding
 categories: drug-discovery
 featured: true
-# toc:
-#   beginning: true
+related_posts: false
 ---
 
 The emergence of Boltz-2 claiming to approach free energy perturbation (FEP) performance marks a watershed moment for computational drug discovery—but skeptics are questioning whether these impressive benchmarks reflect genuine understanding of molecular recognition or sophisticated pattern-matching against memorized training data. **The answer will determine whether deep learning can truly accelerate drug discovery or merely recapitulate what we already know.**
@@ -268,7 +267,7 @@ The generalization versus memorization debate reveals a fundamental tension in a
 Yet the story isn't one of failure. Prospective validations demonstrate that well-designed models can discover genuinely novel compounds. The GEMS model maintains performance on rigorously debiased benchmarks. And even imperfect models offer tremendous value for high-throughput screening, where ranking many compounds approximately beats ranking few compounds precisely.
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-3 mt-md-0" style="max-width: 60%; margin: auto;">
         {% include figure.liquid loading="eager" path="assets/img/Boltz2/Boltz2-Fig1.png" class="img-fluid rounded z-depth-1" zoomable=true%}
     </div>
 </div>

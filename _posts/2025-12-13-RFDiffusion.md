@@ -6,8 +6,7 @@ description: From Backbone to Atomic Precision
 tags: RFDiffusion
 categories: protein-design
 featured: true
-# toc:
-#   beginning: true
+related_posts: false
 ---
 
 **Diffusion models transformed protein design in 2023—now RFDiffusion3 generates complete proteins atom by atom, including the first computationally designed DNA-binding proteins.** The Baker Lab's RFDiffusion family represents the most experimentally validated generative approach to protein design, with success rates **two orders of magnitude higher** than previous methods. What began as backbone generation has evolved into a unified foundation model capable of designing proteins that bind DNA, small molecules, and other proteins with atomic precision. This technical deep-dive traces the architectural evolution from RFDiffusion v1 through All-Atom to RFDiffusion3, explaining the innovations that made each leap possible.
