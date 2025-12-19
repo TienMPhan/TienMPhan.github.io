@@ -44,7 +44,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-deep-learning-for-protein-ligand-binding",
+            },{id: "post-protein-language-models",
+        
+          title: "Protein Language Models",
+        
+        description: "A Technical Guide for Enthusiasts",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Protein-LM/";
+          
+        },
+      },{id: "post-deep-learning-for-protein-ligand-binding",
         
           title: "Deep Learning for Protein-Ligand Binding",
         
