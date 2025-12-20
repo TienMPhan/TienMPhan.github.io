@@ -1,12 +1,12 @@
 ---
 layout: distill
 title: Protein Language Models
-date: 2025-11-23 18:51:00
+date: 2025-11-15 18:51:00
 description: A Technical Guide for Enthusiasts
-tags: Protein Language Models
+tags: PLMs
 categories: structure-prediction
-featured: true
-related_posts: false
+featured: false
+related_posts: true
 ---
 
 Protein language models (PLMs) have fundamentally transformed computational protein science by learning evolutionary constraints directly from amino acid sequences—without requiring multiple sequence alignments. These deep learning models, trained on hundreds of millions of protein sequences using self-supervised objectives borrowed from natural language processing, now rival or exceed traditional methods for tasks ranging from contact prediction to three-dimensional structure determination. Most remarkably, models like **ESMFold** can predict atomic-resolution protein structures from single sequences in seconds, achieving accuracy that approaches the gold-standard AlphaFold2 while running **60× faster**.

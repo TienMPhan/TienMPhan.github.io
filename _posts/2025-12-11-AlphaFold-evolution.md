@@ -5,8 +5,8 @@ date: 2025-11-09 18:51:00
 description: From distance matrices to diffusion
 tags: AlphaFold
 categories: structure-prediction
-featured: true
-related_posts: false
+featured: false
+related_posts: true
 ---
 
 In just six years, DeepMind transformed protein structure prediction from a frustrating computational puzzle into a virtually solved problem—and then extended that solution to the entire molecular machinery of life. AlphaFold's evolution from a distance-predicting neural network (AF1) to an end-to-end structure generator (AF2) to a unified diffusion model for all biomolecules (AF3) represents one of the most consequential achievements in computational biology. This technical deep-dive traces that architectural journey, explaining how each innovation built upon the last to achieve what the Nobel Committee called "one of the most important scientific breakthroughs made by mankind in the 21st century."

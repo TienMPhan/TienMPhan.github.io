@@ -5,8 +5,8 @@ date: 2025-11-21 18:51:00
 description: The neural network transforming computational protein design
 tags: ProteinMPNN
 categories: protein-design
-featured: true
-related_posts: false
+featured: false
+related_posts: true
 ---
 
 Protein sequence design has entered a new era with ProteinMPNN, a **Message-Passing Neural Network** (MPNN) that solves the inverse folding problem—predicting amino acid sequences that will fold into a target backbone structure—with **52.4% native sequence recovery**, dramatically outperforming Rosetta's 32.9% while running **200 times faster**. Published in *Science* in 2022 by Dauparas et al. from the Baker Lab, ProteinMPNN has become the de facto standard for sequence design in modern computational protein engineering pipelines. The method's impact extends far beyond benchmarks: it has enabled the design of therapeutic binders, vaccine nanoparticles, and functional enzymes that were previously intractable, fundamentally reshaping how researchers approach de novo protein creation.

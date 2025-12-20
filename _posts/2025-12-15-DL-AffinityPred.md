@@ -5,8 +5,8 @@ date: 2025-11-22 18:51:00
 description: Are We Learning Physics or Memorizing the PDB?
 tags: Protein-Ligand Binding
 categories: drug-discovery
-featured: true
-related_posts: false
+featured: false
+related_posts: true
 ---
 
 The emergence of Boltz-2 claiming to approach free energy perturbation (FEP) performance marks a watershed moment for computational drug discovery—but skeptics are questioning whether these impressive benchmarks reflect genuine understanding of molecular recognition or sophisticated pattern-matching against memorized training data. **The answer will determine whether deep learning can truly accelerate drug discovery or merely recapitulate what we already know.**
