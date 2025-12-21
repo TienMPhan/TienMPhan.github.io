@@ -19,12 +19,12 @@ social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 4 # leave blank to include all the news in the `_news` folder
+  limit: 6 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 6 # leave blank to include all the blog posts
 ---
 
 I am a computational biophysicist and chemist with over four years of postdoctoral experience in molecular modeling, biomolecular simulations, and force-field development. My research explores protein conformational dynamics, protein–protein and protein–nucleic acid interactions, and the refinement of classical force fields for more accurate biomolecular modeling.

@@ -259,7 +259,7 @@ Looking forward, the inverse folding problem exemplifies how machine learning ca
 
 - Hsu et al., [Learning inverse folding from millions of predicted structures](https://doi.org/10.1101/2022.04.10.487779), (Preprint) **BioRxiv** 2022
 
-- Dauparas et al., [Robust deep learning–based protein sequence design using ProteinMPNN](https://doi.org/10.1126/science.add2187), **Science** 2025
+- Dauparas et al., [Robust deep learning–based protein sequence design using ProteinMPNN](https://doi.org/10.1126/science.add2187), **Science** 2022
 
 - Dauparas et al., [Atomic context-conditioned protein sequence design using LigandMPNN](https://rdcu.be/eU9rH), **Nature Methods** 2025
 
