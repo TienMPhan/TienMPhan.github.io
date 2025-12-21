@@ -37,7 +37,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/books/";
               },
-            },{id: "post-esmfold-protein-language-model",
+            },{id: "post-deep-learning-for-computational-structural-biology",
+        
+          title: "Deep Learning for Computational Structural Biology",
+        
+        description: "A Roadmap for Enthusiasts",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/DeepLearning4StructuralBiology/";
+          
+        },
+      },{id: "post-esmfold-protein-language-model",
         
           title: "ESMFold - Protein Language Model",
         
@@ -149,11 +160,17 @@ ninja.data = [{
             },},{id: "news-our-paper-capturing-the-conformational-heterogeneity-of-hspb1-chaperone-oligomers-at-atomic-resolution-has-been-published-in-jacs-this-is-a-great-collaboration-with-prof-galia-debelouchina-group-also-check-out-our-cover-art-art-sparkles",
           title: 'Our paper “Capturing the Conformational Heterogeneity of HSPB1 Chaperone Oligomers at Atomic Resolution”...',
           description: "",
+          section: "News",},{id: "news-our-paper-transient-interdomain-interactions-modulate-the-monomeric-structural-ensemble-and-self-assembly-of-huntingtin-exon-1-has-been-published-in-advanced-science-this-work-with-my-colleague-priyesh-mohanty-brought-a-lot-of-fun-blush",
+          title: 'Our paper “Transient Interdomain Interactions Modulate the Monomeric Structural Ensemble and Self-Assembly of...',
+          description: "",
+          section: "News",},{id: "news-our-paper-uncovering-the-molecular-interactions-underlying-mbd2-and-mbd3-phase-separation-has-been-published-in-jpcb-this-is-a-great-collaboration-with-prof-alaji-bah-group-also-check-out-our-cover-art-art-sparkles",
+          title: 'Our paper “Uncovering the Molecular Interactions Underlying MBD2 and MBD3 Phase Separation” has...',
+          description: "",
           section: "News",},{id: "news-our-paper-a-disordered-linker-in-the-polycomb-protein-polyhomeotic-tunes-phase-separation-and-oligomerization-has-been-published-in-molecular-cell-this-is-an-exciting-collaboration-with-prof-nicole-francis-group",
           title: 'Our paper “A disordered linker in the Polycomb protein Polyhomeotic tunes phase separation...',
           description: "",
-          section: "News",},{id: "news-our-paper-on-polyq-using-multi-ego-force-field-has-been-published-on-jpcb-https-doi-org-10-1021-acs-jpcb-5c06627-congrats-to-the-team-esp-avijeet-sparkles-clap",
-          title: 'Our paper on polyQ using multi-eGO force field has been published on JPCB...',
+          section: "News",},{id: "news-our-paper-on-polyq-using-multi-ego-force-field-has-been-published-in-jpcb-https-doi-org-10-1021-acs-jpcb-5c06627-congrats-to-the-team-esp-avijeet-sparkles-clap",
+          title: 'Our paper on polyQ using multi-eGO force field has been published in JPCB...',
           description: "",
           section: "News",},{id: "news-our-paper-work-on-refining-all-atom-force-field-has-been-online-in-nature-communications-sparkles-firecracker",
           title: 'Our paper work on refining all-atom force field has been online in Nature...',
