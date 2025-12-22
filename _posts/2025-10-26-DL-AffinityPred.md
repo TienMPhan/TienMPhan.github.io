@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Deep Learning for Protein-Ligand Binding
-date: 2025-11-22 18:51:00
+date: 2025-10-26 18:51:00
 description: Are We Learning Physics or Memorizing the PDB?
 tags: Protein-Ligand Binding
 categories: drug-discovery

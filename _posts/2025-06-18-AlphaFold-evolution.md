@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: The AlphaFold revolution in Structural Biology
-date: 2025-11-09 18:51:00
+date: 2025-06-18 18:51:00
 description: From distance matrices to diffusion
 tags: AlphaFold
 categories: structure-prediction

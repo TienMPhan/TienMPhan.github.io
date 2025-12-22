@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Inside ProteinMPNN
-date: 2025-11-21 18:51:00
+date: 2025-08-16 18:51:00
 description: The neural network transforming computational protein design
 tags: ProteinMPNN
 categories: protein-design
