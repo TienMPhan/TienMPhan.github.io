@@ -48,17 +48,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/DeepLearning4StructuralBiology/";
           
         },
-      },{id: "post-esmfold-protein-language-model",
-        
-          title: "ESMFold - Protein Language Model",
-        
-        description: "From masked language models to protein generation",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/ESM/";
-          
-        },
       },{id: "post-deep-learning-for-protein-ligand-binding",
         
           title: "Deep Learning for Protein-Ligand Binding",
@@ -68,6 +57,28 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/DL-AffinityPred/";
+          
+        },
+      },{id: "post-bioemu-a-biomolecular-emulator",
+        
+          title: "BioEmu - A Biomolecular Emulator",
+        
+        description: "Microsoft&#39;s breakthrough in protein dynamics prediction reshapes computational biology",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/BioEmu/";
+          
+        },
+      },{id: "post-protein-language-models",
+        
+          title: "Protein Language Models",
+        
+        description: "A Technical Guide for Enthusiasts",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Protein-LM/";
           
         },
       },{id: "post-inside-proteinmpnn",
@@ -92,15 +103,15 @@ ninja.data = [{
             window.location.href = "/blog/2025/RFDiffusion/";
           
         },
-      },{id: "post-protein-language-models",
+      },{id: "post-esmfold-protein-language-model",
         
-          title: "Protein Language Models",
+          title: "ESMFold - Protein Language Model",
         
-        description: "A Technical Guide for Enthusiasts",
+        description: "From masked language models to protein generation",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/Protein-LM/";
+            window.location.href = "/blog/2025/ESM/";
           
         },
       },{id: "post-an-overview-of-boltz-2",
