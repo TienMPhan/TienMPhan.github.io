@@ -59,6 +59,28 @@ ninja.data = [{
             window.location.href = "/blog/2025/DL-AffinityPred/";
           
         },
+      },{id: "post-protein-generation-with-evolutionary-diffusion-evodiff",
+        
+          title: "Protein generation with evolutionary diffusion (Evodiff)",
+        
+        description: "How discrete diffusion on sequences unlocks protein design beyond structure",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/EvoDiff/";
+          
+        },
+      },{id: "post-protein-generation-with-evolutionary-diffusion-evodiff",
+        
+          title: "Protein generation with evolutionary diffusion (Evodiff)",
+        
+        description: "Breaking the structure-first paradigm with evolutionary diffusion",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/EvoDiff-v1/";
+          
+        },
       },{id: "post-bioemu-a-biomolecular-emulator",
         
           title: "BioEmu - A Biomolecular Emulator",
@@ -183,8 +205,8 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-on-polyq-using-multi-ego-force-field-has-been-published-in-jpcb-https-doi-org-10-1021-acs-jpcb-5c06627-congrats-to-the-team-esp-avijeet-sparkles-clap",
           title: 'Our paper on polyQ using multi-eGO force field has been published in JPCB...',
           description: "",
-          section: "News",},{id: "news-our-paper-work-on-refining-all-atom-force-field-has-been-online-in-nature-communications-sparkles-firecracker",
-          title: 'Our paper work on refining all-atom force field has been online in Nature...',
+          section: "News",},{id: "news-our-work-on-refining-all-atom-force-field-has-been-online-in-nature-communications-sparkles-firecracker",
+          title: 'Our work on refining all-atom force field has been online in Nature Communications!...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
