@@ -27,8 +27,8 @@ latest_posts:
   limit: 6 # leave blank to include all the blog posts
 ---
 
-I am a computational biophysicist and chemist with over four years of postdoctoral experience in molecular modeling, biomolecular simulations, and force-field development. My research explores protein conformational dynamics, protein–protein and protein–nucleic acid interactions, and the refinement of classical force fields for more accurate biomolecular modeling.
+<p>I am a computational biophysicist and chemist with over four years of postdoctoral experience in molecular modeling, biomolecular simulations, and force-field development. My research explores protein conformational dynamics, protein–protein and protein–nucleic acid interactions, and the refinement of classical force fields for more accurate biomolecular modeling.</p>
 
-I have published 10+ peer-reviewed papers in leading journals, including Molecular Cell, Advanced Science, JACS, eLife, Biophysical Journal, and Nucleic Acids Research, with more than 250 citations. Collaborating closely with experimental groups, I bridge in silico and in vitro/in vivo studies and have contributed to writing many NIH grants.
+<p>I have published 10+ peer-reviewed papers in leading journals, including Molecular Cell, Advanced Science, JACS, eLife, Biophysical Journal, and Nucleic Acids Research, with more than 250 citations. Through close collaboration with experimental groups, I bridge in silico and in vitro/in vivo studies to drive interdisciplinary discovery.</p>
 
-Beyond research, I mentor young scientists in molecular modeling, simulation workflows, and computational data analysis, and I am passionate about combining scientific rigor with creative visualization to communicate complex molecular mechanisms.
+<p>Beyond research, I mentor young scientists in molecular modeling, simulation workflows, and computational data analysis, and I am passionate about combining scientific rigor with creative visualization to communicate complex molecular mechanisms.</p>

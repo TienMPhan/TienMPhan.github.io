@@ -322,7 +322,7 @@
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
             {% assign gs_user = site.data.socials.scholar_userid %}
             {% assign gs_id = entry.google_scholar_id %}
-            {% assign gs_count = nil %}
+            {% assign gs_count = null %}
             {% comment %}
               Prefer a manual override field in the .bib (google_scholar_citations),
               then fall back to a build-time cache in _data/scholar.yml

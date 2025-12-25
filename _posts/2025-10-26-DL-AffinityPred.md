@@ -40,7 +40,7 @@ Training leveraged ~**5 million binding affinity measurements** from ChEMBL, Bin
 
 ### AlphaFold3's diffusion approach enables ligand binding but not affinity
 
-[AlphaFold3](https://doi.org/10.1038/s41586-024-07487-w), published in *Nature* in May 2024, marked DeepMind's pivot from structure prediction to biomolecular interaction modeling. The key architectural innovation is replacing AlphaFold2's structure module with a **diffusion-based generator** operating directly on raw atomic coordinates.
+[AlphaFold3](https://doi.org/10.1038/s41586-024-07487-w), published in _Nature_ in May 2024, marked DeepMind's pivot from structure prediction to biomolecular interaction modeling. The key architectural innovation is replacing AlphaFold2's structure module with a **diffusion-based generator** operating directly on raw atomic coordinates.
 
 Where AF2 required torsion-based parameterization specifically designed for amino acid geometry, AF3's diffusion approach naturally handles arbitrary chemical components—proteins, DNA, RNA, small molecules, ions, and modified residues—within a unified framework. The model receives "noised" atomic coordinates during training and learns to predict true coordinates; at inference, random noise is iteratively denoised to generate structures.
 
@@ -52,15 +52,15 @@ The **Pairformer** replaces AF2's Evoformer, comprising 48 blocks operating on p
 
 Both models build on similar representation strategies but with important differences:
 
-| Feature | AlphaFold3 | Boltz-2 |
-|---------|------------|---------|
-| **Protein input** | Sequence → MSA → pair representation | Sequence → MSA → pair representation |
-| **Ligand input** | SMILES → atomic tokens | SMILES → atomic tokens |
-| **Non-canonical handling** | Atomic tokenization | Single token (preserves identity) |
-| **Core processing** | 48 Pairformer blocks | 64 Pairformer blocks |
-| **Structure generation** | Diffusion on raw coordinates | Diffusion with steering potentials |
-| **Affinity prediction** |  **<span style="color: #2EAF88;">Not supported</span>** |  **<span style="color: #2EAF88;">Dedicated module</span>** |
-| **Template support** | Single-chain only | Multi-chain templates |
+| Feature                    | AlphaFold3                                             | Boltz-2                                                   |
+| -------------------------- | ------------------------------------------------------ | --------------------------------------------------------- |
+| **Protein input**          | Sequence → MSA → pair representation                   | Sequence → MSA → pair representation                      |
+| **Ligand input**           | SMILES → atomic tokens                                 | SMILES → atomic tokens                                    |
+| **Non-canonical handling** | Atomic tokenization                                    | Single token (preserves identity)                         |
+| **Core processing**        | 48 Pairformer blocks                                   | 64 Pairformer blocks                                      |
+| **Structure generation**   | Diffusion on raw coordinates                           | Diffusion with steering potentials                        |
+| **Affinity prediction**    | **<span style="color: #2EAF88;">Not supported</span>** | **<span style="color: #2EAF88;">Dedicated module</span>** |
+| **Template support**       | Single-chain only                                      | Multi-chain templates                                     |
 
 Both architectures leverage **ESM-style protein language model embeddings** to capture evolutionary and structural information, but Boltz-2 explicitly incorporates ESM2 representations into its affinity module—a design choice the GEMS model paper demonstrated improves generalization on debiased benchmarks.
 
@@ -72,7 +72,7 @@ Both architectures leverage **ESM-style protein language model embeddings** to c
 
 Boltz-2's headline claim—approaching free energy perturbation performance at **1,000× lower computational cost**—deserves careful scrutiny. On the FEP+ benchmark (4 targets: CDK2, TYK2, JNK1, P38), Boltz-2 achieves Pearson R = **0.66** versus FEP+'s **0.78** and ABFE's **0.75**. On the broader OpenFE benchmark, Boltz-2 achieves R = 0.62 versus OpenFE's 0.63 and FEP+'s 0.72.
 
-These results are impressive—but context matters. As computational chemist **David Pearlman** noted in [his analysis](https://medium.com/@dapscience/boltz-2-vs-fep-the-wrong-question-heres-why-they-re-stronger-together-6863be348aa2): "For the OpenFE benchmark, it's a move from R² = 0.52 to 0.38... For a chemist whose success depends on the results, this can easily be the difference between '*intriguing, yes please*' and '*sorry, next*.'"
+These results are impressive—but context matters. As computational chemist **David Pearlman** noted in [his analysis](https://medium.com/@dapscience/boltz-2-vs-fep-the-wrong-question-heres-why-they-re-stronger-together-6863be348aa2): "For the OpenFE benchmark, it's a move from R² = 0.52 to 0.38... For a chemist whose success depends on the results, this can easily be the difference between '_intriguing, yes please_' and '_sorry, next_.'"
 
 More convincingly, Boltz-2 achieved Pearson R = **0.65** on the CASP16 affinity challenge (140 protein-ligand pairs across 2 targets), outperforming all submitted competition entries (best competitor: **0.54**). A prospective virtual screen against TYK2 found **8 of 10 top-scoring compounds** validated as binders by ABFE simulations, with correlation R = 0.74 between Boltz-2 scores and ABFE predictions.
 
@@ -80,15 +80,15 @@ More convincingly, Boltz-2 achieved Pearson R = **0.65** on the CASP16 affinity 
 
 On the **PoseBusters benchmark** (308 complexes from 2021+), which evaluates both RMSD accuracy and physical/chemical validity, current methods perform as follows:
 
-| Method | RMSD &lt;2Å + PB-Valid | Key Issues |
-|--------|------------------------|------------|
-| NeuralPLexer3 | **77.9%** | Flow-based, physics-informed |
-| AlphaFold3 | 76.4% (blind) | Chirality violations ~4.4% |
-| SurfDock | ~65% | Volume overlap issues |
-| DiffDock-L | ~50% | Best among DL docking |
-| Vina | 59.7% | Consistent but slower |
-| DiffDock | ~25% | Significant PB failures |
-| EquiBind | &lt;5% | Near-zero PB compliance |
+| Method        | RMSD &lt;2Å + PB-Valid | Key Issues                   |
+| ------------- | ---------------------- | ---------------------------- |
+| NeuralPLexer3 | **77.9%**              | Flow-based, physics-informed |
+| AlphaFold3    | 76.4% (blind)          | Chirality violations ~4.4%   |
+| SurfDock      | ~65%                   | Volume overlap issues        |
+| DiffDock-L    | ~50%                   | Best among DL docking        |
+| Vina          | 59.7%                  | Consistent but slower        |
+| DiffDock      | ~25%                   | Significant PB failures      |
+| EquiBind      | &lt;5%                 | Near-zero PB compliance      |
 
 Notably, **over 50% of deep learning-generated poses fail basic physical validity checks** including steric clashes, incorrect chirality, and impossible bond geometries. Post-processing with force field relaxation improves validity by 20-40 percentage points—suggesting these models capture approximate binding modes but not detailed chemistry.
 
@@ -118,7 +118,7 @@ Boltz-2 demonstrates a concerning **regression-to-mean tendency**, predicting bi
 
 ### Compelling evidence that standard benchmarks dramatically overestimate performance
 
-The most damaging evidence comes from the PDBbind CleanSplit study. By comparing all CASF complexes with all PDBbind training complexes using structure-based clustering (TM scores for proteins, Tanimoto + RMSD for ligand poses), researchers identified that **49% of CASF benchmark complexes** have highly similar structures in training data—sharing similar proteins, similar ligands, *and* similar binding poses.
+The most damaging evidence comes from the PDBbind CleanSplit study. By comparing all CASF complexes with all PDBbind training complexes using structure-based clustering (TM scores for proteins, Tanimoto + RMSD for ligand poses), researchers identified that **49% of CASF benchmark complexes** have highly similar structures in training data—sharing similar proteins, similar ligands, _and_ similar binding poses.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -129,17 +129,17 @@ The most damaging evidence comes from the PDBbind CleanSplit study. By comparing
     PDBbind CleanSplit data leakage analysis showing 49% of CASF benchmark complexes with highly similar training structures. Source: Graber et al., Nature Machine Intelligence 2025, Figure 1.
 </div>
 
-The implications are stark: when top-performing models were retrained on the leak-free CleanSplit dataset, **their benchmark performance dropped substantially**. Most alarmingly, some models achieved competitive CASF-2016 performance "*even after removing all protein information from the input data*"—demonstrating they had learned to predict affinities from ligand features alone, exploiting the fact that similar ligands often have similar affinities regardless of target.
+The implications are stark: when top-performing models were retrained on the leak-free CleanSplit dataset, **their benchmark performance dropped substantially**. Most alarmingly, some models achieved competitive CASF-2016 performance "_even after removing all protein information from the input data_"—demonstrating they had learned to predict affinities from ligand features alone, exploiting the fact that similar ligands often have similar affinities regardless of target.
 
 ### Adversarial experiments reveal limited physics understanding
 
 A 2025 study in Nature Communications ([DOI: 10.1038/s41467-025-63947-5](https://doi.org/10.1038/s41467-025-63947-5)) subjected AlphaFold3 to adversarial stress tests:
 
 1. **Binding site removal**: All binding site residues mutated to glycine
-2. **Pocket blocking**: Binding sites filled with bulky phenylalanines  
+2. **Pocket blocking**: Binding sites filled with bulky phenylalanines
 3. **Chemical inversion**: Binding site residues changed to opposite charge/polarity
 
-The result: "*AlphaFold 3 frequently placed the ligand in the exact same pose as it did with the unmodified protein. In some cases, this led to the prediction of impossible structures with severe steric clashes*."
+The result: "_AlphaFold 3 frequently placed the ligand in the exact same pose as it did with the unmodified protein. In some cases, this led to the prediction of impossible structures with severe steric clashes_."
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -150,25 +150,25 @@ The result: "*AlphaFold 3 frequently placed the ligand in the exact same pose as
     AlphaFold3 adversarial mutation experiment showing identical ligand poses predicted despite binding site destruction. Source: Nature Communications 2025, Figure 2.
 </div>
 
-The conclusion was unambiguous: "*These stress experiments show quite clearly that the AlphaFold 3 model did not learn any kind of physical principles such as electrostatics or van der Waals forces, and not even about clashes*."
+The conclusion was unambiguous: "_These stress experiments show quite clearly that the AlphaFold 3 model did not learn any kind of physical principles such as electrostatics or van der Waals forces, and not even about clashes_."
 
 ### Fold-switching proteins reveal memorization of structural templates
 
-A Nature Communications study examining AlphaFold2's predictions of fold-switching proteins found the model succeeded only **35% of the time** for structures likely in its training set and just **1 of 7 times** for experimentally-confirmed fold-switchers outside training. The authors documented that "*AF2 ultimately predicted [one protein's] helical conformation*" even though coevolutionary information consistently indicated β-sheet structure—suggesting memorized templates override sequence-derived features.
+A Nature Communications study examining AlphaFold2's predictions of fold-switching proteins found the model succeeded only **35% of the time** for structures likely in its training set and just **1 of 7 times** for experimentally-confirmed fold-switchers outside training. The authors documented that "_AF2 ultimately predicted [one protein's] helical conformation_" even though coevolutionary information consistently indicated β-sheet structure—suggesting memorized templates override sequence-derived features.
 
 ### Performance correlates with training set similarity
 
 Multiple studies demonstrate that model performance correlates with similarity to training data:
 
 - AlphaFold3 **beats docking baselines on common ligands** (appearing &gt;100 times in training) but **loses to docking on uncommon ligands** (&lt;100 occurrences)
-- A kinase inhibitor study found models "*memorize kinase phylogeny and match chemical analogues to make predictions instead of explicitly learning the factors driving high-affinity protein-ligand interactions*"
+- A kinase inhibitor study found models "_memorize kinase phylogeny and match chemical analogues to make predictions instead of explicitly learning the factors driving high-affinity protein-ligand interactions_"
 - Temporal splits (training on pre-cutoff data, testing post-cutoff) consistently show 20-40% performance drops versus random splits
 
 ### Counter-evidence: some models genuinely generalize
 
 The picture isn't entirely pessimistic. The **GEMS model** maintains strong performance (Pearson R = 0.803) on CASF-2016 even after removing all train-test leakage—suggesting that with proper architecture design and training data curation, genuine learning is possible. Key to GEMS's success: sparse graph modeling of protein-ligand interactions and transfer learning from language models (ESM2, ChemBERTa-2).
 
-The **OpenFold retraining study** ([DOI: 10.1038/s41592-024-02272-z](https://doi.org/10.1038/s41592-024-02272-z)) found the model "*remarkably robust at generalizing even when the size and diversity of its training set is deliberately limited, including near-complete elisions of classes of secondary structure elements*." Models trained primarily on α-helices could still predict β-sheet structures—evidence of transferable principles.
+The **OpenFold retraining study** ([DOI: 10.1038/s41592-024-02272-z](https://doi.org/10.1038/s41592-024-02272-z)) found the model "_remarkably robust at generalizing even when the size and diversity of its training set is deliberately limited, including near-complete elisions of classes of secondary structure elements_." Models trained primarily on α-helices could still predict β-sheet structures—evidence of transferable principles.
 
 Most compellingly, **prospective validations have succeeded**. The discovery of halicin, a novel antibiotic structurally distinct from known antibiotics (Tanimoto similarity ~0.39 to nearest training compound), demonstrated that GNN-based models can identify genuinely novel active compounds ([DOI: 10.1038/s41586-023-06887-8](https://doi.org/10.1038/s41586-023-06887-8)).
 
@@ -182,11 +182,12 @@ Time-split cross-validation trains models on data before a cutoff date and tests
 
 ### Scaffold splits have limitations
 
-Scaffold splitting—grouping molecules by shared core structure—is widely considered more rigorous than random splitting. However, a 2024 analysis demonstrated that scaffold splits also overestimate performance because "*molecules with different chemical scaffolds are often similar*" in descriptor space. The recommended alternative: UMAP-based clustering that considers full molecular similarity.
+Scaffold splitting—grouping molecules by shared core structure—is widely considered more rigorous than random splitting. However, a 2024 analysis demonstrated that scaffold splits also overestimate performance because "_molecules with different chemical scaffolds are often similar_" in descriptor space. The recommended alternative: UMAP-based clustering that considers full molecular similarity.
 
 ### Structure-based filtering catches deeper leakage
 
 The CleanSplit approach combines multiple criteria:
+
 1. **TM score &gt; 0.8** (protein structural similarity)
 2. **Tanimoto + (1 - ligand RMSD) &gt; 0.8** (ligand + pose similarity)
 3. **Affinity labels within ±1 pK units**
@@ -222,13 +223,13 @@ A particularly revealing test: remove protein information entirely and evaluate 
 
 ### A decision framework for practitioners
 
-| Scenario | Recommended Approach |
-|----------|---------------------|
-| Large library screening | ML models (accept memorization benefits) |
-| Lead optimization, known series | Boltz-2 or hybrid ML+FEP |
-| Small modifications, quantitative ranking | FEP+ |
-| Novel scaffolds, high stakes | FEP + experimental validation |
-| Novel targets, structural exploration | AF3/Boltz-2 with low confidence threshold |
+| Scenario                                  | Recommended Approach                      |
+| ----------------------------------------- | ----------------------------------------- |
+| Large library screening                   | ML models (accept memorization benefits)  |
+| Lead optimization, known series           | Boltz-2 or hybrid ML+FEP                  |
+| Small modifications, quantitative ranking | FEP+                                      |
+| Novel scaffolds, high stakes              | FEP + experimental validation             |
+| Novel targets, structural exploration     | AF3/Boltz-2 with low confidence threshold |
 
 ### Uncertainty quantification is essential but underutilized
 
@@ -251,6 +252,7 @@ The CleanSplit work demonstrates that **training data curation** dramatically af
 ### The need for honest benchmarking
 
 The field needs standardized protocols that:
+
 - Use **temporal splits** with enforced training cutoffs
 - Apply **structure-based filtering** to prevent pose memorization
 - Report **ablation studies** (performance with protein/ligand information removed)
@@ -283,33 +285,33 @@ The path forward requires honest benchmarking, physics-informed architectures, a
 
 ## References
 
-1. Passaro S, Corso G, Wohlwend J, et al. Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction. *bioRxiv* 2025.06.14.659707. [DOI: 10.1101/2025.06.14.659707](https://doi.org/10.1101/2025.06.14.659707)
+1. Passaro S, Corso G, Wohlwend J, et al. Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction. _bioRxiv_ 2025.06.14.659707. [DOI: 10.1101/2025.06.14.659707](https://doi.org/10.1101/2025.06.14.659707)
 
-2. Abramson J, Adler J, Dunger J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature* 2024;630:493-500. [DOI: 10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w)
+2. Abramson J, Adler J, Dunger J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. _Nature_ 2024;630:493-500. [DOI: 10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w)
 
-3. Graber D, Stockinger P, Meyer F, et al. Resolving data bias improves generalization in binding affinity prediction. *Nature Machine Intelligence* 2025;7:1713-1725. [DOI: 10.1038/s42256-025-01124-5](https://doi.org/10.1038/s42256-025-01124-5)
+3. Graber D, Stockinger P, Meyer F, et al. Resolving data bias improves generalization in binding affinity prediction. _Nature Machine Intelligence_ 2025;7:1713-1725. [DOI: 10.1038/s42256-025-01124-5](https://doi.org/10.1038/s42256-025-01124-5)
 
-4. Chakravarty D, et al. AlphaFold predictions of fold-switched conformations are driven by structure memorization. *Nature Communications* 2024;15:7296. [DOI: 10.1038/s41467-024-51801-z](https://doi.org/10.1038/s41467-024-51801-z)
+4. Chakravarty D, et al. AlphaFold predictions of fold-switched conformations are driven by structure memorization. _Nature Communications_ 2024;15:7296. [DOI: 10.1038/s41467-024-51801-z](https://doi.org/10.1038/s41467-024-51801-z)
 
-5. Investigating whether deep learning models for co-folding learn the physics of protein-ligand interactions. *Nature Communications* 2025. [DOI: 10.1038/s41467-025-63947-5](https://doi.org/10.1038/s41467-025-63947-5)
+5. Investigating whether deep learning models for co-folding learn the physics of protein-ligand interactions. _Nature Communications_ 2025. [DOI: 10.1038/s41467-025-63947-5](https://doi.org/10.1038/s41467-025-63947-5)
 
-6. Ahdritz G, et al. OpenFold: retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization. *Nature Methods* 2024;21:1514-1524. [DOI: 10.1038/s41592-024-02272-z](https://doi.org/10.1038/s41592-024-02272-z)
+6. Ahdritz G, et al. OpenFold: retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization. _Nature Methods_ 2024;21:1514-1524. [DOI: 10.1038/s41592-024-02272-z](https://doi.org/10.1038/s41592-024-02272-z)
 
-7. Buttenschoen M, Morris GM, Deane CM. PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences. *Chemical Science* 2024;15:3130-3139. [DOI: 10.1039/d3sc04185a](https://doi.org/10.1039/d3sc04185a)
+7. Buttenschoen M, Morris GM, Deane CM. PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences. _Chemical Science_ 2024;15:3130-3139. [DOI: 10.1039/d3sc04185a](https://doi.org/10.1039/d3sc04185a)
 
-8. Wong F, et al. Discovery of a structural class of antibiotics with explainable deep learning. *Nature* 2024;626:177-185. [DOI: 10.1038/s41586-023-06887-8](https://doi.org/10.1038/s41586-023-06887-8)
+8. Wong F, et al. Discovery of a structural class of antibiotics with explainable deep learning. _Nature_ 2024;626:177-185. [DOI: 10.1038/s41586-023-06887-8](https://doi.org/10.1038/s41586-023-06887-8)
 
-9. Lu W, et al. DynamicBind: predicting ligand-specific protein-ligand complex structure with a deep equivariant generative model. *Nature Communications* 2024;15:1071. [DOI: 10.1038/s41467-024-45461-2](https://doi.org/10.1038/s41467-024-45461-2)
+9. Lu W, et al. DynamicBind: predicting ligand-specific protein-ligand complex structure with a deep equivariant generative model. _Nature Communications_ 2024;15:1071. [DOI: 10.1038/s41467-024-45461-2](https://doi.org/10.1038/s41467-024-45461-2)
 
-10. Qiao Z, et al. State-specific protein-ligand complex structure prediction with a multiscale deep generative model. *Nature Machine Intelligence* 2024;6:195-208. [DOI: 10.1038/s42256-024-00792-z](https://doi.org/10.1038/s42256-024-00792-z)
+10. Qiao Z, et al. State-specific protein-ligand complex structure prediction with a multiscale deep generative model. _Nature Machine Intelligence_ 2024;6:195-208. [DOI: 10.1038/s42256-024-00792-z](https://doi.org/10.1038/s42256-024-00792-z)
 
-11. Cao D, et al. SurfDock is a surface-informed diffusion generative model for reliable and accurate protein-ligand complex prediction. *Nature Methods* 2025;22:310-322. [DOI: 10.1038/s41592-024-02516-y](https://doi.org/10.1038/s41592-024-02516-y)
+11. Cao D, et al. SurfDock is a surface-informed diffusion generative model for reliable and accurate protein-ligand complex prediction. _Nature Methods_ 2025;22:310-322. [DOI: 10.1038/s41592-024-02516-y](https://doi.org/10.1038/s41592-024-02516-y)
 
-12. Corso G, et al. DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking. *ICLR* 2023. arXiv:2210.01776
+12. Corso G, et al. DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking. _ICLR_ 2023. arXiv:2210.01776
 
-13. Valsson O, et al. Narrowing the gap between machine learning scoring functions and free energy perturbation using augmented training data. *Communications Chemistry* 2025. [DOI: 10.1038/s42004-025-01428-y](https://doi.org/10.1038/s42004-025-01428-y)
+13. Valsson O, et al. Narrowing the gap between machine learning scoring functions and free energy perturbation using augmented training data. _Communications Chemistry_ 2025. [DOI: 10.1038/s42004-025-01428-y](https://doi.org/10.1038/s42004-025-01428-y)
 
-14. Ross GA, et al. Maximal and current accuracy of rigorous protein-ligand binding free energy calculations. *Communications Chemistry* 2023. [DOI: 10.1038/s42004-023-01019-9](https://doi.org/10.1038/s42004-023-01019-9)
+14. Ross GA, et al. Maximal and current accuracy of rigorous protein-ligand binding free energy calculations. _Communications Chemistry_ 2023. [DOI: 10.1038/s42004-023-01019-9](https://doi.org/10.1038/s42004-023-01019-9)
 
 15. Li J, et al. Leak Proof PDBBind: A Reorganized Dataset of Protein-Ligand Complexes for More Generalizable Binding Affinity Prediction. arXiv:2308.09639v2
 

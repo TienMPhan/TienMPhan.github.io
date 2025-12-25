@@ -83,11 +83,11 @@ For RFDiffusionAA, the key change is that **small molecule coordinates are held 
 
 The approach produced striking results across three challenging targets:
 
-| Target | Binding Affinity | Structural Validation | Novelty (TM to PDB) |
-|--------|------------------|----------------------|---------------------|
-| Digoxigenin | Kd = 343 nM | CD, thermal stability | 0.59 |
-| Heme | Tight binding | **Crystal structure (0.86 Å RMSD)** | <0.62 |
-| Bilin | Fluorescence-active | CD, fluorescence | <0.52 |
+| Target      | Binding Affinity    | Structural Validation               | Novelty (TM to PDB) |
+| ----------- | ------------------- | ----------------------------------- | ------------------- |
+| Digoxigenin | Kd = 343 nM         | CD, thermal stability               | 0.59                |
+| Heme        | Tight binding       | **Crystal structure (0.86 Å RMSD)** | <0.62               |
+| Bilin       | Fluorescence-active | CD, fluorescence                    | <0.52               |
 
 The heme binder crystal structure deserves emphasis: **0.86 Å Cα RMSD** between design and experiment represents near-perfect atomic accuracy for a de novo protein binding a complex cofactor. These designs show no sequence similarity to natural proteins, demonstrating genuine generalization beyond training examples.
 
@@ -131,12 +131,12 @@ This fine-grained control proved essential for the breakthrough capability: **DN
 
 ### 3. Performance benchmarks demonstrate systematic improvements
 
-| Task | RFD3 Performance | Comparison |
-|------|------------------|------------|
-| Enzyme active sites | 90% success rate | 37/41 wins vs. RFD2 on complex sites |
-| Protein binders | 4/5 wins vs. RFD1 | More diverse geometries |
-| DNA binders | ~9% success | Previously near-impossible |
-| Speed | **10× faster than RFD2** | Despite full all-atom modeling |
+| Task                | RFD3 Performance         | Comparison                           |
+| ------------------- | ------------------------ | ------------------------------------ |
+| Enzyme active sites | 90% success rate         | 37/41 wins vs. RFD2 on complex sites |
+| Protein binders     | 4/5 wins vs. RFD1        | More diverse geometries              |
+| DNA binders         | ~9% success              | Previously near-impossible           |
+| Speed               | **10× faster than RFD2** | Despite full all-atom modeling       |
 
 Enzyme design showcases the practical impact: 190 cysteine hydrolase designs yielded 35 active catalysts (~18% hit rate), with the best achieving **kcat/Km = 3,557 M⁻¹s⁻¹**—comparable to natural enzymes.
 
@@ -169,11 +169,11 @@ RFDiffusion's use of MSE loss (without alignment) instead of FAPE deserves atten
 
 The evolution from v1 → All-Atom → v3 reflects increasing atomic fidelity:
 
-| Version | Resolution | Sidechain Treatment | Ligand Treatment |
-|---------|-----------|---------------------|------------------|
-| v1 | Backbone frames | Implicit (ProteinMPNN adds later) | Contact potentials only |
-| All-Atom | Backbone + ligand atoms | Still implicit | Explicit conditioning |
-| v3 | Full all-atom | Explicit co-diffusion | Full co-diffusion |
+| Version  | Resolution              | Sidechain Treatment               | Ligand Treatment        |
+| -------- | ----------------------- | --------------------------------- | ----------------------- |
+| v1       | Backbone frames         | Implicit (ProteinMPNN adds later) | Contact potentials only |
+| All-Atom | Backbone + ligand atoms | Still implicit                    | Explicit conditioning   |
+| v3       | Full all-atom           | Explicit co-diffusion             | Full co-diffusion       |
 
 This progression matters because protein function depends on atomic detail—enzyme catalysis, molecular recognition, and allosteric regulation all occur at the atomic level.
 
@@ -202,12 +202,12 @@ RFDiffusion2 and RFDiffusion3 have advanced enzyme design substantially. Active 
 
 ### 3. Comparison with alternative approaches
 
-| Method | Approach | Key Strength | Experimental Validation |
-|--------|----------|--------------|------------------------|
-| **RFDiffusion** | Pretrained RF + DDPM | Broad applications, highest success rates | Extensive (hundreds of proteins) |
-| **Chroma** | Custom GNN + diffusion | Text prompts, scalability | 310 proteins characterized |
-| **Genie 2** | Asymmetric diffusion | Multi-motif scaffolding | Limited |
-| **FrameFlow** | SE(3) flow matching | No pretraining needed | Moderate |
+| Method          | Approach               | Key Strength                              | Experimental Validation          |
+| --------------- | ---------------------- | ----------------------------------------- | -------------------------------- |
+| **RFDiffusion** | Pretrained RF + DDPM   | Broad applications, highest success rates | Extensive (hundreds of proteins) |
+| **Chroma**      | Custom GNN + diffusion | Text prompts, scalability                 | 310 proteins characterized       |
+| **Genie 2**     | Asymmetric diffusion   | Multi-motif scaffolding                   | Limited                          |
+| **FrameFlow**   | SE(3) flow matching    | No pretraining needed                     | Moderate                         |
 
 RFDiffusion's advantage lies in experimental validation depth. The standard workflow—RFDiffusion → ProteinMPNN → AlphaFold2 validation—has produced more structurally confirmed designs than any competing approach.
 

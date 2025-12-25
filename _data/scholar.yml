@@ -1,14 +1,12 @@
-
-
 # Minimal cache for Google Scholar citation counts
 # Key = paper's Google Scholar "citation_for_view" id
 # Value = integer citation count to display on the badge
 google_scholar:
-  "YsMSGLbcyi4C": 96
+  "YsMSGLbcyi4C": 97
   "Y0pCki6q_DkC": 63
   "ymY9cBF3mdcC": 29
   "W7OEmFMy1HYC": 26
-  "0EnyYjriUFMC": 26
+  "0EnyYjriUFMC": 27
   "eQOLeE2rZwMC": 18
   "SpPTWFSNUtQC": 9
   "0KyAp5RtaNEC": 8

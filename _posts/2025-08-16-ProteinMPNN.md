@@ -9,7 +9,7 @@ featured: false
 related_posts: true
 ---
 
-Protein sequence design has entered a new era with ProteinMPNN, a **Message-Passing Neural Network** (MPNN) that solves the inverse folding problem—predicting amino acid sequences that will fold into a target backbone structure—with **52.4% native sequence recovery**, dramatically outperforming Rosetta's 32.9% while running **200 times faster**. Published in *Science* in 2022 by Dauparas et al. from the Baker Lab, ProteinMPNN has become the de facto standard for sequence design in modern computational protein engineering pipelines. The method's impact extends far beyond benchmarks: it has enabled the design of therapeutic binders, vaccine nanoparticles, and functional enzymes that were previously intractable, fundamentally reshaping how researchers approach de novo protein creation.
+Protein sequence design has entered a new era with ProteinMPNN, a **Message-Passing Neural Network** (MPNN) that solves the inverse folding problem—predicting amino acid sequences that will fold into a target backbone structure—with **52.4% native sequence recovery**, dramatically outperforming Rosetta's 32.9% while running **200 times faster**. Published in _Science_ in 2022 by Dauparas et al. from the Baker Lab, ProteinMPNN has become the de facto standard for sequence design in modern computational protein engineering pipelines. The method's impact extends far beyond benchmarks: it has enabled the design of therapeutic binders, vaccine nanoparticles, and functional enzymes that were previously intractable, fundamentally reshaping how researchers approach de novo protein creation.
 
 ---
 
@@ -38,7 +38,6 @@ The model takes the 3D coordinates of the protein backbone (N, C, C, O atoms). I
 </p>
 </details>
 
-
 The edge features encode **25 pairwise distances** between backbone heavy atoms ($\mathrm{N, C_α, C, O}$) and a virtual $\mathrm{C_β}$ atom. For each edge connecting residues $i$ and $j$, the model computes all combinations of distances between these five atom types across both residues. These raw distances undergo transformation through **radial basis functions (RBFs)** using 16 Gaussian basis functions spaced from 0-20 Å, converting continuous distances into rich learnable representations. Additional positional encodings capture sequence-relative position (capped at ±32 residues) and a binary same-chain indicator for multi-chain complexes.
 
 This distance-based representation was a key innovation over previous approaches. The original [Structured Transformer](https://proceedings.neurips.cc/paper/2019/hash/f3a4ff4839c56a5f460c88cce3666a2b-Abstract.html) from Ingraham et al. (2019) used backbone dihedral angles ($φ, ψ, ω$) and frame orientations. Replacing these with pure pairwise distances improved sequence recovery from 41.2% to 49.0%—a substantial jump attributed to distances providing better inductive bias for residue-residue interactions without the coordinate system dependencies of angles.
@@ -59,9 +58,10 @@ This distance-based representation was a key innovation over previous approaches
 The encoder consists of three message-passing layers that iteratively update both node and edge embeddings—another departure from earlier architectures that only updated nodes. Each encoder layer performs two sequential operations. First, messages from neighboring nodes aggregate to update node embeddings through a three-layer MLP operating on concatenated features (source node, target node, edge embedding). The aggregated messages divide by a scaling factor of 30 to stabilize training, followed by a residual connection and layer normalization. Second, an identical operation updates edge embeddings using the newly refined node states.
 
 The mathematical formulation follows:
+
 ```
 qij = GELU(Linear(concat(vi, vj, eij)))   →  MLP with 3n→m→m dimensions
-dhi = Σj qij / 30                         →  Neighbor aggregation with scaling  
+dhi = Σj qij / 30                         →  Neighbor aggregation with scaling
 vi = LayerNorm(vi + Dropout(dhi))         →  Residual update with 10% dropout
 ```
 
@@ -98,7 +98,6 @@ The primary architecture consists of two main parts:
 </ul>
 </p>
 </details>
-
 
 ---
 
@@ -172,7 +171,6 @@ ProteinMPNN is designed to handle a diverse range of 3D protein backbones, from 
 </p>
 </details>
 
-
 ---
 
 ## Limitations reveal where ProteinMPNN struggles
@@ -197,7 +195,7 @@ Physics-based Rosetta fixed-backbone design remains valuable when interpretabili
 
 ## LigandMPNN extends the architecture for atomic context
 
-**[LigandMPNN](https://rdcu.be/eU9rH)**, published in *Nature Methods* in 2025, represents the most significant ProteinMPNN extension. It introduces a **three-graph architecture**: the original protein backbone graph, an intra-ligand graph with atoms as nodes encoding element types and interatomic distances, and a protein-ligand graph connecting residues to nearby ligand atoms. Two additional message-passing layers process ligand information before the decoder, expanding model size to **2.62 million parameters** while maintaining sub-second inference.
+**[LigandMPNN](https://rdcu.be/eU9rH)**, published in _Nature Methods_ in 2025, represents the most significant ProteinMPNN extension. It introduces a **three-graph architecture**: the original protein backbone graph, an intra-ligand graph with atoms as nodes encoding element types and interatomic distances, and a protein-ligand graph connecting residues to nearby ligand atoms. Two additional message-passing layers process ligand information before the decoder, expanding model size to **2.62 million parameters** while maintaining sub-second inference.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -216,7 +214,7 @@ Additional variants address specific needs. **SolubleMPNN** trains exclusively o
 
 ## Integration with RFdiffusion defines modern design pipelines
 
-The contemporary protein design workflow integrates three complementary tools: **[RFdiffusion](https://rdcu.be/eULvM)** generates backbone structures through diffusion-based denoising, **ProteinMPNN** designs sequences for those backbones, and **AlphaFold2** validates that designed sequences are predicted to fold as intended. This pipeline, established by Watson et al. in *Nature* 2023, typically generates 10,000+ backbone candidates, designs 2-8 sequences per backbone with ProteinMPNN, then filters by self-consistency metrics (predicted structure within 2 Å RMSD of design model, pLDDT >70).
+The contemporary protein design workflow integrates three complementary tools: **[RFdiffusion](https://rdcu.be/eULvM)** generates backbone structures through diffusion-based denoising, **ProteinMPNN** designs sequences for those backbones, and **AlphaFold2** validates that designed sequences are predicted to fold as intended. This pipeline, established by Watson et al. in _Nature_ 2023, typically generates 10,000+ backbone candidates, designs 2-8 sequences per backbone with ProteinMPNN, then filters by self-consistency metrics (predicted structure within 2 Å RMSD of design model, pLDDT >70).
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">

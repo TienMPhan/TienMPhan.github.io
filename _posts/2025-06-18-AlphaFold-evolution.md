@@ -144,7 +144,7 @@ Critically, FAPE is **chirality-sensitive**—it is not invariant to reflections
 **Self-distillation** proved essential for achieving top accuracy. The training pipeline:
 
 1. Train initial model on ~100,000 PDB structures
-2. Use trained model to predict structures for ~350,000 diverse Uniclust30 sequences  
+2. Use trained model to predict structures for ~350,000 diverse Uniclust30 sequences
 3. Filter to high-confidence predictions (pLDDT > 0.5)
 4. Retrain from scratch on mixture: 25% PDB, 75% predicted structures
 
@@ -337,7 +337,7 @@ AlphaFold's success catalyzed an ecosystem of related methods:
 
 ### 5. Recognition: The Nobel Prize
 
-In October 2024, **Demis Hassabis** and **John Jumper** received the Nobel Prize in Chemistry "*for protein structure prediction*," sharing the award with **David Baker** "*for computational protein design*." The Royal Swedish Academy described AlphaFold as solving "a 50-year-old problem"—the protein folding challenge that had defined computational biology since Anfinsen's work in the 1960s.
+In October 2024, **Demis Hassabis** and **John Jumper** received the Nobel Prize in Chemistry "_for protein structure prediction_," sharing the award with **David Baker** "_for computational protein design_." The Royal Swedish Academy described AlphaFold as solving "a 50-year-old problem"—the protein folding challenge that had defined computational biology since Anfinsen's work in the 1960s.
 
 This represented the first Nobel Prize awarded primarily for an AI-based scientific tool, signaling recognition that machine learning had achieved a transformative breakthrough in natural science.
 
@@ -373,22 +373,22 @@ For structural biology specifically, AlphaFold has shifted the field from "can w
 
 **AlphaFold1**
 
-- Senior, A.W. et al. "Improved protein structure prediction using potentials from deep learning." *Nature* 577, 706–710 (2020). DOI: 10.1038/s41586-019-1923-7
+- Senior, A.W. et al. "Improved protein structure prediction using potentials from deep learning." _Nature_ 577, 706–710 (2020). DOI: 10.1038/s41586-019-1923-7
 
-**AlphaFold2**  
+**AlphaFold2**
 
-- Jumper, J. et al. "Highly accurate protein structure prediction with AlphaFold." *Nature* 596, 583–589 (2021). DOI: 10.1038/s41586-021-03819-2
+- Jumper, J. et al. "Highly accurate protein structure prediction with AlphaFold." _Nature_ 596, 583–589 (2021). DOI: 10.1038/s41586-021-03819-2
 
 **AlphaFold3**
 
-- Abramson, J. et al. "Accurate structure prediction of biomolecular interactions with AlphaFold 3." *Nature* 630, 493–500 (2024). DOI: 10.1038/s41586-024-07487-w
+- Abramson, J. et al. "Accurate structure prediction of biomolecular interactions with AlphaFold 3." _Nature_ 630, 493–500 (2024). DOI: 10.1038/s41586-024-07487-w
 
 **CASP Assessments**
 
-- Kryshtafovych, A. et al. "Critical assessment of methods of protein structure prediction (CASP)—Round XIII." *Proteins* 87, 1011–1020 (2019).
-- CASP14 assessment papers, *Proteins* (2021)
+- Kryshtafovych, A. et al. "Critical assessment of methods of protein structure prediction (CASP)—Round XIII." _Proteins_ 87, 1011–1020 (2019).
+- CASP14 assessment papers, _Proteins_ (2021)
 
 **Impact and Database**
 
-- Tunyasuvunakool, K. et al. "Highly accurate protein structure prediction for the human proteome." *Nature* 596, 590–596 (2021).
+- Tunyasuvunakool, K. et al. "Highly accurate protein structure prediction for the human proteome." _Nature_ 596, 590–596 (2021).
 - AlphaFold Database: https://alphafold.ebi.ac.uk/

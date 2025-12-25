@@ -5,13 +5,13 @@ date: 2025-11-28 18:03:00
 description: A Roadmap for Enthusiasts
 tags: Deep-Learning
 categories: roadmap
-featured: false
+featured: true
 related_posts: true
 ---
 
 The transition from traditional computational biology to AI-driven structural biology requires mastering **four pillars**: **(1)** foundational machine learning, **(2)** deep learning architectures specific to 3D molecular structures (transformers, diffusion models, equivariant neural networks, GNNs), **(3)** hands-on experience with landmark tools (AlphaFold, ESMFold, RFDiffusion, ProteinMPNN), and **(4)** engagement with a rapidly evolving research community. This roadmap provides a **16-24 week structured pathway** from ML fundamentals to implementing state-of-the-art protein structure prediction and design—prioritizing free, actively maintained resources vetted by the computational biology community.
 
-The field underwent revolutionary change when AlphaFold2 achieved near-experimental accuracy at CASP14 in 2020, earning its creators the 2024 Nobel Prize in Chemistry. Since then, the landscape has expanded dramatically: **ESMFold** demonstrates that protein language models alone can predict structures without multiple sequence alignments, **RFDiffusion** enables *de novo* protein design through diffusion models, and **AlphaFold3/Boltz2** extends predictions to protein-ligand-nucleic acid complexes. Graduate students entering this field now have unprecedented opportunities—but also face the challenge of synthesizing knowledge across machine learning, structural biology, and software engineering.
+The field underwent revolutionary change when AlphaFold2 achieved near-experimental accuracy at CASP14 in 2020, earning its creators the 2024 Nobel Prize in Chemistry. Since then, the landscape has expanded dramatically: **ESMFold** demonstrates that protein language models alone can predict structures without multiple sequence alignments, **RFDiffusion** enables _de novo_ protein design through diffusion models, and **AlphaFold3/Boltz2** extends predictions to protein-ligand-nucleic acid complexes. Graduate students entering this field now have unprecedented opportunities—but also face the challenge of synthesizing knowledge across machine learning, structural biology, and software engineering.
 
 > **"<span style="color: #ff3c01ff;">A journey of a thousand miles begins with a single step.</span>"** -- Lao Tzu
 
@@ -32,7 +32,7 @@ The roadmap divides into distinct phases, each building systematically on the pr
 
 Prerequisites vary by phase. Phase 1 requires only Python programming proficiency (one year experience), undergraduate-level calculus, and basic linear algebra. No prior biology knowledge is strictly necessary, though familiarity with protein structure basics accelerates progress. By Phase 3, learners should be comfortable with PyTorch tensor operations, loss functions, and optimization, while Phase 4 assumes the ability to read and implement methods from research papers.
 
-Time estimates assume **15-20 hours per week** of dedicated study. Full-time learners (40+ hours/week) can compress the timeline to 10-12 weeks. The path accommodates different learning styles: visual learners benefit from *3Blue1Brown* and *lecture-based courses*, while hands-on learners should prioritize *Colab notebooks* and coding exercises throughout.
+Time estimates assume **15-20 hours per week** of dedicated study. Full-time learners (40+ hours/week) can compress the timeline to 10-12 weeks. The path accommodates different learning styles: visual learners benefit from _3Blue1Brown_ and _lecture-based courses_, while hands-on learners should prioritize _Colab notebooks_ and coding exercises throughout.
 
 ---
 
@@ -48,7 +48,7 @@ Visual learners should start with **3Blue1Brown's [Neural Networks series](https
 
 ### Deep learning frameworks (Weeks 3-4)
 
-**PyTorch is the dominant framework** for structural biology AI—ESMFold, OpenFold, RoseTTAFold, ProteinMPNN, and RFDiffusion all use it. Begin with the official [PyTorch tutorials](https://docs.pytorch.org/tutorials/), starting with the **[60-Minute Blitz](https://docs.pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)**  covering tensors, autograd, and basic neural networks. The "[Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html)" tutorial series then builds complete training workflows. The **[Zero to Mastery: Learn PyTorch for Deep Learning](https://www.learnpytorch.io/)** course  offers comprehensive free video-based training.
+**PyTorch is the dominant framework** for structural biology AI—ESMFold, OpenFold, RoseTTAFold, ProteinMPNN, and RFDiffusion all use it. Begin with the official [PyTorch tutorials](https://docs.pytorch.org/tutorials/), starting with the **[60-Minute Blitz](https://docs.pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)** covering tensors, autograd, and basic neural networks. The "[Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html)" tutorial series then builds complete training workflows. The **[Zero to Mastery: Learn PyTorch for Deep Learning](https://www.learnpytorch.io/)** course offers comprehensive free video-based training.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -161,7 +161,7 @@ For local installation with full control, **[OpenFold](https://github.com/aqlabo
 
 ### Foundation reading list (Weeks 1-4)
 
-The first paper to read is *"Attention Is All You Need"* ([arXiv:1706.03762](https://doi.org/10.48550/arXiv.1706.03762))—understanding transformers is prerequisite to everything that follows. Next, *"Denoising Diffusion Probabilistic Models"* ([arXiv:2006.11239](https://doi.org/10.48550/arXiv.2006.11239)) establishes diffusion fundamentals. Then *"Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences"* (ESM-1b; [PNAS 2021](https://doi.org/10.1073/pnas.2016239118)) demonstrates that transformer pre-training on protein sequences yields emergent structure information.
+The first paper to read is _"Attention Is All You Need"_ ([arXiv:1706.03762](https://doi.org/10.48550/arXiv.1706.03762))—understanding transformers is prerequisite to everything that follows. Next, _"Denoising Diffusion Probabilistic Models"_ ([arXiv:2006.11239](https://doi.org/10.48550/arXiv.2006.11239)) establishes diffusion fundamentals. Then _"Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences"_ (ESM-1b; [PNAS 2021](https://doi.org/10.1073/pnas.2016239118)) demonstrates that transformer pre-training on protein sequences yields emergent structure information.
 
 ### Core structural biology AI (Weeks 5-8)
 
@@ -173,7 +173,7 @@ The first paper to read is *"Attention Is All You Need"* ([arXiv:1706.03762](htt
 
 ### Review papers for context
 
-"*AI-Driven Deep Learning Techniques in Protein Structure Prediction*" ([Int J Mol Sci 2024](https://doi.org/10.3390/ijms25158426)) provides comprehensive overview for newcomers. "*Emerging frontiers in protein structure prediction following the AlphaFold revolution*" ([J R Soc Interface 2025](https://doi.org/10.1098/rsif.2024.0886)) covers post-AlphaFold developments including conformational ensembles and remaining challenges.
+"_AI-Driven Deep Learning Techniques in Protein Structure Prediction_" ([Int J Mol Sci 2024](https://doi.org/10.3390/ijms25158426)) provides comprehensive overview for newcomers. "_Emerging frontiers in protein structure prediction following the AlphaFold revolution_" ([J R Soc Interface 2025](https://doi.org/10.1098/rsif.2024.0886)) covers post-AlphaFold developments including conformational ensembles and remaining challenges.
 
 ---
 
@@ -238,6 +238,7 @@ Participate in **CASP** when the next experiment opens (monitor [predictioncente
 ## Complete resource index by category
 
 ### Courses (Free)
+
 - MIT 6.S191: [https://introtodeeplearning.com](https://introtodeeplearning.com/)
 - Stanford CS229: [https://cs229.stanford.edu](https://cs229.stanford.edu) (YouTube videos)
 - Stanford CS224n: [https://web.stanford.edu/class/cs224n](https://web.stanford.edu/class/cs224n)
@@ -245,16 +246,19 @@ Participate in **CASP** when the next experiment opens (monitor [predictioncente
 - EMBL-EBI AlphaFold: [https://www.ebi.ac.uk/training/online/courses/alphafold](https://www.ebi.ac.uk/training/online/courses/alphafold)
 
 ### Framework tutorials
+
 - PyTorch: [https://docs.pytorch.org/tutorials](https://docs.pytorch.org/tutorials)
 - JAX: [https://docs.jax.dev/en/latest/tutorials.html](https://docs.jax.dev/en/latest/tutorials.html)
 - PyTorch Geometric: [https://pytorch-geometric.readthedocs.io](https://pytorch-geometric.readthedocs.io)
 
 ### Books (Free online)
+
 - Dive into Deep Learning: [https://d2l.ai](https://d2l.ai)
 - Deep Learning (Goodfellow): [https://www.deeplearningbook.org](https://www.deeplearningbook.org)
 - Geometric Deep Learning: [https://geometricdeeplearning.com](https://geometricdeeplearning.com)
 
 ### Key GitHub repositories
+
 - ColabFold: [https://github.com/sokrypton/ColabFold](https://github.com/sokrypton/ColabFold)
 - ColabDesign: [https://github.com/sokrypton/ColabDesign](https://github.com/sokrypton/ColabDesign)
 - OpenFold: [https://github.com/aqlaboratory/openfold](https://github.com/aqlaboratory/openfold)
@@ -265,12 +269,14 @@ Participate in **CASP** when the next experiment opens (monitor [predictioncente
 - e3nn: [https://github.com/e3nn/e3nn](https://github.com/e3nn/e3nn)
 
 ### Video resources
+
 - 3Blue1Brown Neural Networks: [https://www.3blue1brown.com/topics/neural-networks](https://www.3blue1brown.com/topics/neural-networks)
 - Andrej Karpathy Zero to Hero: [https://karpathy.ai/zero-to-hero.html](https://karpathy.ai/zero-to-hero.html)
 - StatQuest: [https://www.youtube.com/c/joshstarmer](https://www.youtube.com/c/joshstarmer)
 - MLCB Conference: [https://www.youtube.com/@mlcbconf](https://www.youtube.com/@mlcbconf)
 
 ### Community
+
 - MLSB Workshop: [https://www.mlsb.io](https://www.mlsb.io)
 - CASP: [https://predictioncenter.org](https://predictioncenter.org)
 - AlphaFold Database: [https://alphafold.ebi.ac.uk](https://alphafold.ebi.ac.uk)
@@ -282,6 +288,6 @@ Participate in **CASP** when the next experiment opens (monitor [predictioncente
 
 The path from ML novice to competent practitioner in AI-driven structural biology requires approximately **16-24 weeks** of dedicated study—but the investment yields extraordinary capabilities. Learners who complete this roadmap can predict protein structures with near-experimental accuracy, design novel proteins computationally, extract meaningful embeddings from protein sequences, and engage productively with cutting-edge research literature.
 
-Three principles guide successful learning: **prioritize depth over breadth** in the early phases (truly understanding transformers and diffusion models pays dividends throughout), **maintain hands-on practice** alongside theory (run ColabFold on day one, even before understanding the architecture), and **engage with the community** (the field moves too fast to learn in isolation). 
+Three principles guide successful learning: **prioritize depth over breadth** in the early phases (truly understanding transformers and diffusion models pays dividends throughout), **maintain hands-on practice** alongside theory (run ColabFold on day one, even before understanding the architecture), and **engage with the community** (the field moves too fast to learn in isolation).
 
 The tools and techniques covered here—AlphaFold, ESMFold, RFDiffusion, ProteinMPNN—represent the current state-of-the-art, but the field continues rapid evolution. The foundational understanding of transformers, diffusion models, equivariant networks, and GNNs prepares learners to adapt as new methods emerge. The Nobel Prize recognition in 2024 signals that AI-driven structural biology has entered the mainstream—and the best opportunities lie ahead for those equipped to contribute.

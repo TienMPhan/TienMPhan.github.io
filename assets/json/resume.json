@@ -29,7 +29,12 @@
       "url": "https://example.com",
       "startDate": "2021-10-16",
       "endDate": "Present",
-      "highlights": ["Biomolecular simulations of proteins and nucleic acids", "Force field development and optimization", "Molecular docking and virtual screening", "Protein structure prediction and design"]
+      "highlights": [
+        "Biomolecular simulations of proteins and nucleic acids",
+        "Force field development and optimization",
+        "Molecular docking and virtual screening",
+        "Protein structure prediction and design"
+      ]
     }
   ],
   // "volunteer": [
@@ -184,11 +189,7 @@
     {
       "name": "Protein Structure Prediction & Design",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Oligomer prediction",
-        "Sequence design for interaction tuning",
-        "AlphaFold, Boltz2, ProteinMPNN, RFDiffusion, MODELLER"
-      ]
+      "keywords": ["Oligomer prediction", "Sequence design for interaction tuning", "AlphaFold, Boltz2, ProteinMPNN, RFDiffusion, MODELLER"]
     },
     {
       "name": "Molecular Docking & Virtual Screening",

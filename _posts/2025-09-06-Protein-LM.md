@@ -69,23 +69,23 @@ RoPE enables arbitrary-length sequences at inference, a significant advantage fo
 
 Meta AI's Evolutionary Scale Modeling (ESM) series represents the most influential PLM family, demonstrating that biological structure and function emerge from scaling unsupervised learning to hundreds of millions of sequences.
 
-**ESM-1b** (Rives et al., 2021, *PNAS*) established that a 650M-parameter transformer trained on UniRef50's 250 million sequences could predict secondary structure at **71.6% accuracy** and extract contact information from attention patterns without any structural supervision. The model achieved effective cross-entropy of ~8.46, indicating substantial understanding of amino acid co-occurrence patterns.
+**ESM-1b** (Rives et al., 2021, _PNAS_) established that a 650M-parameter transformer trained on UniRef50's 250 million sequences could predict secondary structure at **71.6% accuracy** and extract contact information from attention patterns without any structural supervision. The model achieved effective cross-entropy of ~8.46, indicating substantial understanding of amino acid co-occurrence patterns.
 
-**ESM-1v** (Meier et al., 2021, *NeurIPS*) specialized for variant effect prediction by training on UniRef90—the higher 90% clustering threshold captures more sequence variation relevant for predicting mutation effects. Using zero-shot log-odds scoring (log P(mutant) - log P(wildtype)), ESM-1v achieved **Spearman ρ = 0.52** across 41 deep mutational scanning datasets, matching state-of-the-art methods that require expensive MSA construction.
+**ESM-1v** (Meier et al., 2021, _NeurIPS_) specialized for variant effect prediction by training on UniRef90—the higher 90% clustering threshold captures more sequence variation relevant for predicting mutation effects. Using zero-shot log-odds scoring (log P(mutant) - log P(wildtype)), ESM-1v achieved **Spearman ρ = 0.52** across 41 deep mutational scanning datasets, matching state-of-the-art methods that require expensive MSA construction.
 
-**ESM-2** (Lin et al., 2023, *Science*) scaled to **15 billion parameters** across 48 layers, demonstrating consistent scaling laws where larger models encode increasingly accurate structural information. A key architectural improvement was switching to RoPE positional embeddings and pre-layer normalization. Remarkably, ESM-2's 150M model outperforms ESM-1b's 650M model on structure prediction—suggesting architectural improvements matter as much as scale.
+**ESM-2** (Lin et al., 2023, _Science_) scaled to **15 billion parameters** across 48 layers, demonstrating consistent scaling laws where larger models encode increasingly accurate structural information. A key architectural improvement was switching to RoPE positional embeddings and pre-layer normalization. Remarkably, ESM-2's 150M model outperforms ESM-1b's 650M model on structure prediction—suggesting architectural improvements matter as much as scale.
 
-| Model | Parameters | Layers | Training Data | Key Innovation |
-| ------- | ------------ | -------- | --------------- | ---------------- |
-| ESM-1b | 650M | 33 | UniRef50 (250M seqs) | First large-scale PLM showing structural emergence |
-| ESM-1v | 650M | 33 | UniRef90 (98M seqs) | Zero-shot variant effect prediction |
-| ESM-2 | 8M–15B | 6–48 | UniRef50 (2021) | RoPE embeddings, scaling to 15B parameters |
+| Model  | Parameters | Layers | Training Data        | Key Innovation                                     |
+| ------ | ---------- | ------ | -------------------- | -------------------------------------------------- |
+| ESM-1b | 650M       | 33     | UniRef50 (250M seqs) | First large-scale PLM showing structural emergence |
+| ESM-1v | 650M       | 33     | UniRef90 (98M seqs)  | Zero-shot variant effect prediction                |
+| ESM-2  | 8M–15B     | 6–48   | UniRef50 (2021)      | RoPE embeddings, scaling to 15B parameters         |
 
 ---
 
 ## ProtTrans family explores diverse architectures
 
-The ProtTrans project (Elnaggar et al., 2021, *IEEE TPAMI*) systematically evaluated different transformer architectures for proteins, training on unprecedented computational resources including Google TPU Pods with up to 1,024 cores.
+The ProtTrans project (Elnaggar et al., 2021, _IEEE TPAMI_) systematically evaluated different transformer architectures for proteins, training on unprecedented computational resources including Google TPU Pods with up to 1,024 cores.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" style="max-width: 75%; margin: auto;">
@@ -102,7 +102,7 @@ The ProtTrans project (Elnaggar et al., 2021, *IEEE TPAMI*) systematically evalu
 
 **Ankh** (Elnaggar et al., 2023) demonstrated that protein-specific optimizations outweigh raw scale. By optimizing masking strategies, architecture hyperparameters, and training data selection, Ankh achieves competitive performance with **<10% of the training compute** of larger models. The key insight: careful engineering matters as much as brute-force scaling for protein applications.
 
-Other architecturally distinct models include **UniRep** (Alley et al., 2019, *Nature Methods*), a multiplicative LSTM that pioneered the concept of "evotuning"—fine-tuning on evolutionarily related sequences to boost task-specific performance. **ProGen** (Madani et al., 2023, *Nature Biotechnology*) used GPT-style autoregressive training to enable controllable protein generation, producing artificial lysozymes with **73% functionality** at sequence identities as low as 31% to natural proteins.
+Other architecturally distinct models include **UniRep** (Alley et al., 2019, _Nature Methods_), a multiplicative LSTM that pioneered the concept of "evotuning"—fine-tuning on evolutionarily related sequences to boost task-specific performance. **ProGen** (Madani et al., 2023, _Nature Biotechnology_) used GPT-style autoregressive training to enable controllable protein generation, producing artificial lysozymes with **73% functionality** at sequence identities as low as 31% to natural proteins.
 
 ---
 
@@ -118,8 +118,8 @@ where the coupling matrix $J$ directly predicts contacts. Attention heads learn 
 
 To extract contact predictions from attention:
 
-1. Aggregate attention matrices across heads and layers: 
-$A_{\text{agg}} = \frac{1}{|H||L|}\sum_{h,l} A^{(h,l)}$.
+1. Aggregate attention matrices across heads and layers:
+   $A_{\text{agg}} = \frac{1}{|H||L|}\sum_{h,l} A^{(h,l)}$.
 
 2. Symmetrize: $\hat{A} = \frac{1}{2}(A + A^T)$.
 
@@ -156,11 +156,11 @@ where $T_i, T_j$ are residue coordinate frames. IPA's key property is **SE(3) in
 
 The model trains on a mixture of **25,000 PDB clusters** and **12 million AlphaFold2 predictions** as distillation targets, with 75% weight on predicted structures. The **Frame Aligned Point Error (FAPE)** loss penalizes coordinate deviations under multiple local reference frames, enforcing both global and local structural accuracy.
 
-| Metric | ESMFold | AlphaFold2 (single seq) | AlphaFold2 (full MSA) |
-|--------|---------|-------------------------|----------------------|
-| CAMEO TM-score | 0.83 | 0.73 | 0.89 |
-| CASP14 TM-score | 0.68 | 0.37 | 0.85 |
-| Inference time (500 residues) | ~8 seconds | ~30+ minutes | ~30+ minutes |
+| Metric                        | ESMFold    | AlphaFold2 (single seq) | AlphaFold2 (full MSA) |
+| ----------------------------- | ---------- | ----------------------- | --------------------- |
+| CAMEO TM-score                | 0.83       | 0.73                    | 0.89                  |
+| CASP14 TM-score               | 0.68       | 0.37                    | 0.85                  |
+| Inference time (500 residues) | ~8 seconds | ~30+ minutes            | ~30+ minutes          |
 
 ESMFold excels for **orphan proteins** lacking homologs, where MSA-based methods fail. On CASP14 targets, ESMFold's 0.68 TM-score dramatically outperforms AlphaFold2's 0.37 when MSAs are removed—demonstrating that PLM embeddings effectively encode evolutionary information that would otherwise require explicit MSA construction.
 
@@ -249,32 +249,32 @@ Current frontiers include **multimodal models** combining sequence, structure, a
 
 ## References
 
-1. Rives A, Meier J, Sercu T, et al. Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences. *Proceedings of the National Academy of Sciences*. 2021;118(15):e2016239118. [doi:10.1073/pnas.2016239118](https://doi.org/10.1073/pnas.2016239118)
+1. Rives A, Meier J, Sercu T, et al. Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences. _Proceedings of the National Academy of Sciences_. 2021;118(15):e2016239118. [doi:10.1073/pnas.2016239118](https://doi.org/10.1073/pnas.2016239118)
 
-2. Lin Z, Akin H, Rao R, et al. Evolutionary-scale prediction of atomic-level protein structure with a language model. *Science*. 2023;379(6637):1123-1130. [doi:10.1126/science.ade2574](https://doi.org/10.1126/science.ade2574)
+2. Lin Z, Akin H, Rao R, et al. Evolutionary-scale prediction of atomic-level protein structure with a language model. _Science_. 2023;379(6637):1123-1130. [doi:10.1126/science.ade2574](https://doi.org/10.1126/science.ade2574)
 
-3. Meier J, Rao R, Verkuil R, et al. Language models enable zero-shot prediction of the effects of mutations on protein function. *Advances in Neural Information Processing Systems*. 2021; [34:29287-29303](https://proceedings.neurips.cc/paper/2021/hash/f51338d736f95dd42427296047067694-Abstract.html).
+3. Meier J, Rao R, Verkuil R, et al. Language models enable zero-shot prediction of the effects of mutations on protein function. _Advances in Neural Information Processing Systems_. 2021; [34:29287-29303](https://proceedings.neurips.cc/paper/2021/hash/f51338d736f95dd42427296047067694-Abstract.html).
 
-4. Elnaggar A, Heinzinger M, Dallago C, et al. ProtTrans: Toward understanding the language of life through self-supervised learning. *IEEE Transactions on Pattern Analysis and Machine Intelligence*. 2021;44(10):7112-7127. [doi:10.1109/TPAMI.2021.3095381](https://ieeexplore.ieee.org/document/9477085)
+4. Elnaggar A, Heinzinger M, Dallago C, et al. ProtTrans: Toward understanding the language of life through self-supervised learning. _IEEE Transactions on Pattern Analysis and Machine Intelligence_. 2021;44(10):7112-7127. [doi:10.1109/TPAMI.2021.3095381](https://ieeexplore.ieee.org/document/9477085)
 
-5. Vig J, Madani A, Varber LR, et al. BERTology meets biology: Interpreting attention in protein language models. *arXiv preprint*. 2020; [arXiv:2006.15222](https://doi.org/10.48550/arXiv.2006.15222).
+5. Vig J, Madani A, Varber LR, et al. BERTology meets biology: Interpreting attention in protein language models. _arXiv preprint_. 2020; [arXiv:2006.15222](https://doi.org/10.48550/arXiv.2006.15222).
 
-6. Jumper J, Evans R, Pritzel A, et al. Highly accurate protein structure prediction with AlphaFold. *Nature*. 2021;596(7873):583-589. [doi:10.1038/s41586-021-03819-2](https://rdcu.be/eVvDm)
+6. Jumper J, Evans R, Pritzel A, et al. Highly accurate protein structure prediction with AlphaFold. _Nature_. 2021;596(7873):583-589. [doi:10.1038/s41586-021-03819-2](https://rdcu.be/eVvDm)
 
-7. Rao R, Bhattacharya N, Thomas N, et al. Evaluating protein transfer learning with TAPE. *Advances in Neural Information Processing Systems*. 2019; [32:9689-9701](https://papers.neurips.cc/paper_files/paper/2019/hash/37f65c068b7723cd7809ee2d31d7861c-Abstract.html).
+7. Rao R, Bhattacharya N, Thomas N, et al. Evaluating protein transfer learning with TAPE. _Advances in Neural Information Processing Systems_. 2019; [32:9689-9701](https://papers.neurips.cc/paper_files/paper/2019/hash/37f65c068b7723cd7809ee2d31d7861c-Abstract.html).
 
-8. Alley EC, Khimulya G, Biswas S, AlQuraishi M, Church GM. Unified rational protein engineering with sequence-based deep representation learning. *Nature Methods*. 2019;16:1315-1322. [doi:10.1038/s41592-019-0598-1](https://rdcu.be/eVvED)
+8. Alley EC, Khimulya G, Biswas S, AlQuraishi M, Church GM. Unified rational protein engineering with sequence-based deep representation learning. _Nature Methods_. 2019;16:1315-1322. [doi:10.1038/s41592-019-0598-1](https://rdcu.be/eVvED)
 
-9. Madani A, Krause B, Greene ER, et al. Large language models generate functional protein sequences across diverse families. *Nature Biotechnology*. 2023;41:1099-1106. [doi:10.1038/s41587-022-01618-2](https://rdcu.be/eVvFF)
+9. Madani A, Krause B, Greene ER, et al. Large language models generate functional protein sequences across diverse families. _Nature Biotechnology_. 2023;41:1099-1106. [doi:10.1038/s41587-022-01618-2](https://rdcu.be/eVvFF)
 
-10. Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need. *Advances in Neural Information Processing Systems*. 2017; 30:5998-6008. [doi:10.48550/arXiv.1706.03762](https://doi.org/10.48550/arXiv.1706.03762)
+10. Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need. _Advances in Neural Information Processing Systems_. 2017; 30:5998-6008. [doi:10.48550/arXiv.1706.03762](https://doi.org/10.48550/arXiv.1706.03762)
 
-11. Heinzinger M, Elnaggar A, Wang Y, et al. Modeling aspects of the language of life through transfer-learning protein sequences. *BMC Bioinformatics*. 2019;20:723. [doi:10.1186/s12859-019-3220-8](https://rdcu.be/eVvHd)
+11. Heinzinger M, Elnaggar A, Wang Y, et al. Modeling aspects of the language of life through transfer-learning protein sequences. _BMC Bioinformatics_. 2019;20:723. [doi:10.1186/s12859-019-3220-8](https://rdcu.be/eVvHd)
 
-12. Jones DT, Singh T, Kosciolek T, Sheridan S. MetaPSICOV: combining coevolution methods for accurate prediction of contacts and long range hydrogen bonding in proteins. *Bioinformatics*. 2015;31(7):999-1006. [doi:10.1093/bioinformatics/btu791](https://doi.org/10.1093/bioinformatics/btu791)
+12. Jones DT, Singh T, Kosciolek T, Sheridan S. MetaPSICOV: combining coevolution methods for accurate prediction of contacts and long range hydrogen bonding in proteins. _Bioinformatics_. 2015;31(7):999-1006. [doi:10.1093/bioinformatics/btu791](https://doi.org/10.1093/bioinformatics/btu791)
 
-13. Wu R, Ding F, Wang R, et al. High-resolution de novo structure prediction from primary sequence. *bioRxiv*. 2022. [doi:10.1101/2022.07.21.500999](https://doi.org/10.1101/2022.07.21.500999)
+13. Wu R, Ding F, Wang R, et al. High-resolution de novo structure prediction from primary sequence. _bioRxiv_. 2022. [doi:10.1101/2022.07.21.500999](https://doi.org/10.1101/2022.07.21.500999)
 
-14. Elnaggar A, Essam H, Salah-Eldin W, et al. Ankh: Optimized protein language model unlocks general-purpose modelling. *arXiv preprint*. 2023; [arXiv:2301.06568](https://doi.org/10.48550/arXiv.2301.06568)
+14. Elnaggar A, Essam H, Salah-Eldin W, et al. Ankh: Optimized protein language model unlocks general-purpose modelling. _arXiv preprint_. 2023; [arXiv:2301.06568](https://doi.org/10.48550/arXiv.2301.06568)
 
-15. Su J, Lu Y, Pan S, Murtadha A, Wen B, Liu Y. RoFormer: Enhanced transformer with rotary position embedding. *arXiv preprint*. 2021; [arXiv:2104.09864](https://doi.org/10.48550/arXiv.2104.09864)
+15. Su J, Lu Y, Pan S, Murtadha A, Wen B, Liu Y. RoFormer: Enhanced transformer with rotary position embedding. _arXiv preprint_. 2021; [arXiv:2104.09864](https://doi.org/10.48550/arXiv.2104.09864)
