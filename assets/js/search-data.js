@@ -70,17 +70,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/EvoDiff/";
           
         },
-      },{id: "post-protein-generation-with-evolutionary-diffusion-evodiff",
-        
-          title: "Protein generation with evolutionary diffusion (Evodiff)",
-        
-        description: "Breaking the structure-first paradigm with evolutionary diffusion",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/EvoDiff-v1/";
-          
-        },
       },{id: "post-bioemu-a-biomolecular-emulator",
         
           title: "BioEmu - A Biomolecular Emulator",
