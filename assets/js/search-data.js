@@ -59,6 +59,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/DL-AffinityPred/";
           
         },
+      },{id: "post-se-3-and-e-3-equivariance-in-computational-structural-biology",
+        
+          title: "SE(3) and E(3) Equivariance in Computational Structural Biology",
+        
+        description: "Symmetry as a Design Principle",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Equivariance/";
+          
+        },
       },{id: "post-protein-generation-with-evolutionary-diffusion-evodiff",
         
           title: "Protein generation with evolutionary diffusion (Evodiff)",
