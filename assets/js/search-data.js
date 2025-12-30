@@ -48,6 +48,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/DeepLearning4StructuralBiology/";
           
         },
+      },{id: "post-boltzgen-redefines-protein-binder-design",
+        
+          title: "BoltzGen Redefines Protein Binder Design",
+        
+        description: "with Unified All-Atom Architecture",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/BoltzGen/";
+          
+        },
       },{id: "post-deep-learning-for-protein-ligand-binding",
         
           title: "Deep Learning for Protein-Ligand Binding",
