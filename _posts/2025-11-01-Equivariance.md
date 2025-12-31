@@ -154,7 +154,7 @@ AlphaFold3 ([Abramson et al., Nature 2024](https://rdcu.be/eWFeW)) represents a 
     <p><b>Figure 8: Architectural evolution from AlphaFold2 to AlphaFold3</b>. AlphaFold2 (left) uses deep MSA processing with Evoformer blocks and IPA-based structure refinement with explicit $\text{SE(3)}$ equivariance. AlphaFold3 (right) simplifies to a Pairformer, reduces MSA depth, and replaces IPA with diffusion-based all-atom structure prediction without explicit equivariance constraints.</p>
 </div>
 
-This change enables AlphaFold3 to model diverse biomolecular complexes—proteins, nucleic acids, small molecules, ions—with a unified architecture. The authors note that "*no invariance or equivariance are required after all*" when sufficient data and model capacity are available. Whether this represents a fundamental insight or a pragmatic engineering choice for multi-modal modeling remains debated.
+This change enables AlphaFold3 to model diverse biomolecular complexes—proteins, nucleic acids, small molecules, ions—with a unified architecture. The authors note that "_no invariance or equivariance are required after all_" when sufficient data and model capacity are available. Whether this represents a fundamental insight or a pragmatic engineering choice for multi-modal modeling remains debated.
 
 ## Spherical harmonic architectures: TFN, $\text{SE(3)}$-Transformers, and Equiformer
 
@@ -204,11 +204,13 @@ The critical bottleneck remained computational scaling with degree. **Equiformer
 
 **EGNN** ([Satorras et al., ICML 2021](https://doi.org/10.48550/arXiv.2102.09844)) demonstrated that sophisticated equivariance is possible without spherical harmonics or higher-order tensors. The architecture maintains two feature types: invariant node embeddings $h_i$ and equivariant coordinates $x_i$. Message passing updates both:
 
-$$\begin{align}
+$$
+\begin{align}
 m_{ij} &= φ_e(h_i, h_j, \lVert x_i - x_j \rVert^2, a_{ij}) \\
 x_i^{new} &= x_i + \text{C}·\sum_j (x_i - x_j) · φ_x(m_{ij}) \\
 h_i^{new} &= φ_h(h_i, \sum_j m_{ij})
-\end{align}$$
+\end{align}
+$$
 
 ```
 (Eq.1)      # Invariant messages
@@ -233,12 +235,14 @@ EGNN's simplicity enables efficient scaling to large systems and serves as the b
 
 **GVP** ([Jing et al., ICLR 2021](https://doi.org/10.48550/arXiv.2009.01411)) provides another simplified approach, operating on (scalar, vector) feature pairs. The key operation is **scalarization**: extracting invariant information from vectors via $\text{L2}$ norms, enabling information flow from geometric to scalar features:
 
-$$\begin{align}
+$$
+\begin{align}
 (s', V') &= \text{GVP}(s, V) \\
 V_h &= W_h · V \\
 s' &= σ(W_m · [s; \lVert V_h \rVert]) \\
 V' &= σ⁺(W_μ · V_h)
-\end{align}$$
+\end{align}
+$$
 
 ```
 (Eq.5)      # Linear transformation on vectors
@@ -382,7 +386,7 @@ The recognition that equivariance provides **data efficiency** rather than just 
 
 ### The design era (2023-present)
 
-**[RFdiffusion]((https://rdcu.be/eWj7u))'s** success demonstrated that equivariant architectures enable not just prediction but generation of novel functional proteins. The shift from understanding natural proteins to designing synthetic ones represents a qualitative capability change enabled by equivariant representations.
+**[RFdiffusion](https://rdcu.be/eWj7u)'s** success demonstrated that equivariant architectures enable not just prediction but generation of novel functional proteins. The shift from understanding natural proteins to designing synthetic ones represents a qualitative capability change enabled by equivariant representations.
 
 **[AlphaFold3](https://rdcu.be/eWFeW)** (2024) and alternatives like **[Boltz-1](https://doi.org/10.1101/2024.11.19.624167)** (2024, fully open-source, MIT license) extended prediction to all-atom biomolecular complexes—proteins, nucleic acids, small molecules, ions, modified residues. Interestingly, AlphaFold3's removal of explicit equivariance in favor of diffusion raises questions about whether architectural constraints or implicit learning from massive data is the path forward.
 
@@ -433,15 +437,18 @@ The path forward will likely blend explicit equivariance with learned representa
 ## References for Further Reading
 
 **Foundational Theory:**
+
 - Bronstein, Bruna, Cohen, Veličković. "Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges." arXiv:2104.13478 (2021)
 - Cohen & Welling. "Group Equivariant Convolutional Networks." ICML (2016)
 - Thomas et al. "Tensor Field Networks." arXiv:1802.08219 (2018)
 
 **Structure Prediction:**
+
 - Jumper et al. "Highly accurate protein structure prediction with AlphaFold." Nature 596:583-589 (2021)
 - Abramson et al. "Accurate structure prediction of biomolecular interactions with AlphaFold 3." Nature 630:493-500 (2024)
 
 **Equivariant Architectures:**
+
 - Fuchs et al. "SE(3)-Transformers." NeurIPS (2020), arXiv:2006.10503
 - Satorras et al. "E(n) Equivariant Graph Neural Networks." ICML (2021), arXiv:2102.09844
 - Jing et al. "Learning from Protein Structure with Geometric Vector Perceptrons." ICLR (2021), arXiv:2009.01411
@@ -449,14 +456,17 @@ The path forward will likely blend explicit equivariance with learned representa
 - Liao et al. "EquiformerV2." ICLR (2024), arXiv:2306.12059
 
 **Protein Design:**
+
 - Watson et al. "De novo design of protein structure and function with RFdiffusion." Nature 620:1089-1100 (2023)
 - Dauparas et al. "Robust deep learning-based protein sequence design using ProteinMPNN." Science 378:49-56 (2022)
 - Ingraham et al. "Illuminating protein space with a programmable generative model." Nature 623:1070-1078 (2023)
 
 **Data Efficiency:**
+
 - Batzner et al. "E(3)-equivariant graph neural networks for data-efficient interatomic potentials." Nature Communications (2022)
 
 **Recent Advances:**
+
 - Wohlwend, Corso et al. "Boltz-1: Democratizing Biomolecular Interaction Modeling." arXiv (2024)
 - Yim et al. "SE(3) diffusion model with application to protein backbone generation." ICML (2023), arXiv:2302.02277
 - Bose et al. "SE(3)-Stochastic Flow Matching for Protein Backbone Generation." ICLR (2024), arXiv:2310.02391
