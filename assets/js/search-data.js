@@ -37,7 +37,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/books/";
               },
-            },{id: "post-deep-learning-for-computational-structural-biology",
+            },{id: "post-when-transformers-learn-to-speak-protein",
+        
+          title: "When Transformers learn to speak protein",
+        
+        description: "a deep dive into BERTology meets biology",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Bertology/";
+          
+        },
+      },{id: "post-deep-learning-for-computational-structural-biology",
         
           title: "Deep Learning for Computational Structural Biology",
         
