@@ -59,6 +59,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/DeepLearning4StructuralBiology/";
           
         },
+      },{id: "post-igfold-a-fast-accurate-antibody-structure-prediction",
+        
+          title: "IgFold - a fast, accurate antibody structure prediction",
+        
+        description: "How deep learning on 558 million antibodies revolutionized structure prediction?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/IgFold/";
+          
+        },
       },{id: "post-boltzgen-redefines-protein-binder-design",
         
           title: "BoltzGen Redefines Protein Binder Design",
