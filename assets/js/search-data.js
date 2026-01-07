@@ -59,6 +59,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/DeepLearning4StructuralBiology/";
           
         },
+      },{id: "post-transformers-revolutionize-protein-structure-prediction-and-design",
+        
+          title: "Transformers Revolutionize Protein Structure Prediction and Design",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Transformers/";
+          
+        },
       },{id: "post-igfold-a-fast-accurate-antibody-structure-prediction",
         
           title: "IgFold - a fast, accurate antibody structure prediction",
