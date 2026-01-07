@@ -303,25 +303,25 @@ The transformer's journey from language modeling to protein structure represents
 
 ## Key papers and DOIs
 
-| Tool/Paper                | DOI                        | Year |
-| ------------------------- | -------------------------- | ---- |
-| Attention Is All You Need | [10.48550/arXiv.1706.03762](https://doi.org/10.48550/arXiv.1706.03762)  | 2017 |
-| AlphaFold2                | [10.1038/s41586-021-03819-2](https://rdcu.be/eXS0E) | 2021 |
-| AlphaFold3                | [10.1038/s41586-024-07487-w](https://rdcu.be/eXS0R) | 2024 |
-| ESMFold/ESM-2             | [10.1126/science.ade2574](https://doi.org/10.1126/science.ade2574)    | 2023 |
-| ESM-3                     | [10.1126/science.ads0018](https://doi.org/10.1126/science.ads0018)    | 2025 |
-| ProteinMPNN               | [10.1126/science.add2187](https://doi.org/10.1126/science.add2187)    | 2022 |
-| LigandMPNN                | [10.1038/s41592-025-02626-1](https://rdcu.be/eXS16) | 2025 |
-| RFdiffusion               | [10.1038/s41586-023-06415-8](https://rdcu.be/eXS2E) | 2023 |
-| RoseTTAFold               | [10.1126/science.abj8754](https://doi.org/10.1126/science.abj8754)    | 2021 |
-| Boltz-1                   | [10.1101/2024.11.19.624167](https://doi.org/10.1101/2024.11.19.624167)  | 2024 |
-| Boltz-2                   | [10.1101/2025.06.14.659707](https://doi.org/10.1101/2025.06.14.659707)  | 2025 |
-| OpenFold                  | [10.1038/s41592-024-02272-z](10.1038/s41592-024-02272-z) | 2024 |
-| ColabFold                 | [10.1038/s41592-022-01488-1](https://rdcu.be/eXS3u) | 2022 |
-| IgFold                    | [10.1038/s41467-023-38063-x](https://rdcu.be/eXS3C) | 2023 |
-| OmegaFold                 | [10.1101/2022.07.21.500999](https://doi.org/10.1101/2022.07.21.500999)  | 2022 |
-| Chroma                    | [10.1038/s41586-023-06728-8](https://rdcu.be/eXS32) | 2023 |
-| FrameDiff                 | [10.48550/arXiv.2302.02277](https://doi.org/10.48550/arXiv.2302.02277)  | 2023 |
+| Tool/Paper                | DOI                                                                    | Year |
+| ------------------------- | ---------------------------------------------------------------------- | ---- |
+| Attention Is All You Need | [10.48550/arXiv.1706.03762](https://doi.org/10.48550/arXiv.1706.03762) | 2017 |
+| AlphaFold2                | [10.1038/s41586-021-03819-2](https://rdcu.be/eXS0E)                    | 2021 |
+| AlphaFold3                | [10.1038/s41586-024-07487-w](https://rdcu.be/eXS0R)                    | 2024 |
+| ESMFold/ESM-2             | [10.1126/science.ade2574](https://doi.org/10.1126/science.ade2574)     | 2023 |
+| ESM-3                     | [10.1126/science.ads0018](https://doi.org/10.1126/science.ads0018)     | 2025 |
+| ProteinMPNN               | [10.1126/science.add2187](https://doi.org/10.1126/science.add2187)     | 2022 |
+| LigandMPNN                | [10.1038/s41592-025-02626-1](https://rdcu.be/eXS16)                    | 2025 |
+| RFdiffusion               | [10.1038/s41586-023-06415-8](https://rdcu.be/eXS2E)                    | 2023 |
+| RoseTTAFold               | [10.1126/science.abj8754](https://doi.org/10.1126/science.abj8754)     | 2021 |
+| Boltz-1                   | [10.1101/2024.11.19.624167](https://doi.org/10.1101/2024.11.19.624167) | 2024 |
+| Boltz-2                   | [10.1101/2025.06.14.659707](https://doi.org/10.1101/2025.06.14.659707) | 2025 |
+| OpenFold                  | [10.1038/s41592-024-02272-z](10.1038/s41592-024-02272-z)               | 2024 |
+| ColabFold                 | [10.1038/s41592-022-01488-1](https://rdcu.be/eXS3u)                    | 2022 |
+| IgFold                    | [10.1038/s41467-023-38063-x](https://rdcu.be/eXS3C)                    | 2023 |
+| OmegaFold                 | [10.1101/2022.07.21.500999](https://doi.org/10.1101/2022.07.21.500999) | 2022 |
+| Chroma                    | [10.1038/s41586-023-06728-8](https://rdcu.be/eXS32)                    | 2023 |
+| FrameDiff                 | [10.48550/arXiv.2302.02277](https://doi.org/10.48550/arXiv.2302.02277) | 2023 |
 
 ---
 
